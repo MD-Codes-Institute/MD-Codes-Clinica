@@ -5,12 +5,11 @@ import Procedimentos from "./pages/Procedimentos";
 import Clinica from "./pages/Clinica";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Footer from "./components/Footer";
 import ReactLenis from "lenis/react";
 import BtnTopOrBottom from "./components/BtnTopOrBottom";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import GaleriaDeCasos from "./pages/GaleriaDeCasos";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -45,6 +44,7 @@ function App() {
             <Route path="/clinica" element={<Clinica />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
+            <Route path="/antes-&-depois" element={<GaleriaDeCasos />} />
           </Routes>
           <Footer />
         </BrowserRouter>
