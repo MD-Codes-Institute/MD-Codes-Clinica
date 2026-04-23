@@ -9,7 +9,7 @@ export default function HeaderMobile({ toggleMobileMenu, mobileMenu }) {
       initial={{ x: 50, opacity: 0 }}
       animate={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
       exit={{ x: 50, opacity: 0 }}
-      className="fixed z-999 bg-gray-950 w-screen sm:w-[70%] md:w-[50%] h-screen top-0 right-0 flex flex-col items-center justify-center"
+      className="fixed z-999 bg-gray-950 w-screen sm:w-[70%] md:w-[50%] h-screen top-0 right-0 flex flex-col items-center justify-center sm:border-l sm:border-l-amber-200 sm:shadow-2xl sm:shadow-amber-300"
     >
       <AnimatePresence>
         <motion.button

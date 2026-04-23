@@ -23,7 +23,7 @@ const useHeader = () => {
     setMobileMenu(false);
   }, [location.pathname]);
 
-  window.addEventListener("resize", () => window.innerWidth > 1024 && setMobileMenu(false));
+  window.addEventListener("resize", () => window.innerWidth > 1280 && setMobileMenu(false));
 
   return { mobileMenu, hidden, toggleMobileMenu };
 };

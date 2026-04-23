@@ -38,8 +38,7 @@ function Header() {
             <span className="sr-only">MD codes</span>
             <AnimatePresence>
               {!mobileMenu && (
-                <motion.img
-                  initial={{ x: 50, opacity: 0 }}
+                <motion.img 
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: 50, opacity: 0 }}
                   src={LogoMDCodes}

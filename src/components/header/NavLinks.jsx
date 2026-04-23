@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
-import { useLocation } from "react-router-dom";
 import { navigationLinks } from "../../data/content";
-
+import "../../App.css";
 export default function NavLinks({ variant = "desktop" }) {
   const classContainer =
     variant === "desktop"
@@ -14,18 +12,16 @@ export default function NavLinks({ variant = "desktop" }) {
         <Link
           key={v.name + i}
           to={v.href}
-          className={`text-md font-semibold ${
+          className={`text-md font-semibold navigation-link-header ${
             v.href === location.pathname
-              ? `text-shadow-2xs text-shadow-amber-300`
+              ? `text-shadow-2xs text-shadow-amber-200`
               : `text-shadow-none`
-          } text-white transition-transform duration-200 hover:scale-115 hover:text-[#ffe585] hover:cursor-pointer `}
+          } text-white`}
         >
           {v.name}
         </Link>
       ))}
-      {variant !== "desktop" && (
-            <hr className="border w-75"/>
-        )}
+      {variant !== "desktop" && <hr className="border w-75" />}
     </div>
   );
 }
