@@ -137,6 +137,7 @@ export const navigationLinks = [
   { name: "Procedimentos", href: "/procedimentos" },
   { name: "Clínica", href: "/clinica" },
   { name: "Sobre", href: "/sobre" },
+  { name: "Antes & Depois", href: "/antes-&-depois" },
   { name: "Contatos", href: "/contato" },
 ];
 

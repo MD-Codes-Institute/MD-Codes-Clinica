@@ -36,7 +36,7 @@ function Clinica() {
 
         {/* 3. Conteúdo (Acima da imagem e sem filtro) */}
       </section>
-      <section className="bg-black h-full md:h-screen py-20 md:py-10 relative z-30 shadow-[0px_10px_20px_30px_rgba(0,0,0,0.8)]">
+      <section className="bg-black h-full :h-screen py-20 md:py-10 relative z-30 shadow-[0px_10px_20px_30px_rgba(0,0,0,0.8)]">
         <div className="flex h-[30vh] justify-center items-center ">
           <p className="h-full py-0 md:py-20 px-5 text-center text-2xl md:text-4xl font-light mb-7">
             Inovação, tecnologia e sofisticação. Estamos localizados na Faria
@@ -45,7 +45,7 @@ function Clinica() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center mb-10">
+        <div className="flex justify-center items-center ">
           <CarouselScroll listImg={listImg} />
         </div>
       </section>

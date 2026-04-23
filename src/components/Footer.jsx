@@ -1,11 +1,11 @@
 import LogoMDCodes from "../assets/MdCodes_Half.png";
 import { Link, useLocation } from "react-router-dom";
-import "./styles/Header.css";
 import { navigationLinks } from "../data/content";
 import whats from "../assets/icon-whatsapp.png";
 import email from "../assets/icon-email.png";
 import insta from "../assets/icon-instagram.png";
 import { message, phoneNumber, sentEmail, subject } from "../data/content";
+import "../App.css"
 export const Mapa = () => {
   const urlMapa =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2421956067737!2d-46.67912039999999!3d-23.595645399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5751c0403d6b%3A0x6e967701961e1de6!2sMD%20Codes%20Institute!5e0!3m2!1spt-BR!2sbr!4v1769097950395!5m2!1spt-BR!2sbr";
