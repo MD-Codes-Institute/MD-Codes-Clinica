@@ -7,15 +7,28 @@ import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import Header from "./components/header/Header";
 import Footer from "./components/Footer";
-import ReactLenis from "lenis/react";
+import { ReactLenis } from "lenis/react";
 import BtnTopOrBottom from "./components/BtnTopOrBottom";
 import GaleriaDeCasos from "./pages/GaleriaDeCasos";
 import ScrollToTop from "./components/ScrollToTop";
+import { useEffect, useRef } from "react";
+import { cancelFrame, frame } from "framer-motion";
 
 function App() {
+  const lenisRef = useRef(null);
+
+  useEffect(() => {
+    function update(data) {
+      const time = data.timestamp;
+      lenisRef.current?.lenis?.raf(time);
+    }
+
+    frame.update(update, true);
+    return () => cancelFrame(update);
+  }, []);
   return (
     <div className="min-h-full">
-      <ReactLenis root>
+      <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
         <video
           autoPlay
           muted
