@@ -4,8 +4,7 @@ import { navigationLinks } from "../data/content";
 import whats from "../assets/icon-whatsapp.png";
 import email from "../assets/icon-email.png";
 import insta from "../assets/icon-instagram.png";
-import { message, phoneNumber, sentEmail, subject } from "../data/content";
-import "../App.css"
+import "../App.css";
 export const Mapa = () => {
   const urlMapa =
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.2421956067737!2d-46.67912039999999!3d-23.595645399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5751c0403d6b%3A0x6e967701961e1de6!2sMD%20Codes%20Institute!5e0!3m2!1spt-BR!2sbr!4v1769097950395!5m2!1spt-BR!2sbr";
@@ -28,15 +27,18 @@ export const Mapa = () => {
 
 function Footer() {
   const location = useLocation();
+  const message = "Olá, gostária de mais informações!";
+  const subject = "Informações sobre a cliníca";
+  const emailContact = import.meta.env.VITE_CONTACT_EMAIL;
+  const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
+
   return (
     <footer className="w-[95%] mx-auto mb-15 relative z-50">
       <hr className="line-header" />
       <section className="flex flex-col xl:flex-row xl:justify-between items-center">
         <div className="xl:h-96 flex flex-col md:justify-between p-10">
           <img src={LogoMDCodes} alt="Imagem MD Codes" className="w-70 h-10" />
-          <p className="hidden xl:flex mt-12 md:mt-0">
-            ©2026 MDMaio Incorp Edu Ltda.
-          </p>
+          <p className="hidden xl:flex mt-12 md:mt-0">©2026 MDMaio Incorp Edu Ltda.</p>
         </div>
 
         <div className="flex flex-col h-86 justify-between items-center xl:items-start p-5 text-[20px]">
@@ -58,9 +60,7 @@ function Footer() {
         {/* containe icones redes */}
         <div className="flex xl:flex-col pb-15 md:py-7 gap-5 xl:h-96 ">
           <a
-            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-              message
-            )}`}
+            href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="nooper noreffer"
             className="w-7 h-7"
@@ -72,11 +72,7 @@ function Footer() {
             />
           </a>
           {/* link para o instagram */}
-          <a
-            href="https://www.instagram.com/mauriciodemaio/"
-            target="_blank"
-            className="w-7 h-7"
-          >
+          <a href="https://www.instagram.com/mauriciodemaio/" target="_blank" className="w-7 h-7">
             <img
               src={insta}
               alt="icone do instagram"
@@ -85,7 +81,7 @@ function Footer() {
           </a>
           {/* link para o e-mail */}
           <a
-            href={`mailto:${sentEmail}?subject=${encodeURIComponent(
+            href={`mailto:${emailContact}?subject=${encodeURIComponent(
               subject
             )}&body=${encodeURIComponent(message)}`}
             className="w-7 h-7"
@@ -98,9 +94,7 @@ function Footer() {
           </a>
         </div>
         <Mapa />
-        <p className="flex mt-5 p-10 xl:hidden">
-          ©2025 MDMaio Incorp Edu Ltda.
-        </p>
+        <p className="flex mt-5 p-10 xl:hidden">©2025 MDMaio Incorp Edu Ltda.</p>
       </section>
     </footer>
   );
