@@ -1,9 +1,13 @@
 import whats from "../../assets/icon-whatsapp.png";
 import email from "../../assets/icon-email.png";
 import insta from "../../assets/icon-instagram.png";
-import { message, phoneNumber, sentEmail, subject } from "../../data/content";
 
 export default function SocialLinks({ variant = "desktop" }) {
+  const message = "Olá, gostária de mais informações!"
+  const subject = "Informações sobre a cliníca"
+  const emailContact = import.meta.env.VITE_CONTACT_EMAIL
+  const phoneNumber = import.meta.env.VITE_PHONE_NUMBER
+
   const classContainer =
     variant === "desktop"
       ? "hidden xl:flex flex-row justify-center items-center gap-5 w-auto"
@@ -32,7 +36,7 @@ export default function SocialLinks({ variant = "desktop" }) {
       </a>
       {/* link para o e-mail */}
       <a
-        href={`mailto:${sentEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
+        href={`mailto:${emailContact}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
           message
         )}`}
         className="w-7 h-7"

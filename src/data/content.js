@@ -141,7 +141,3 @@ export const navigationLinks = [
   { name: "Contatos", href: "/contato" },
 ];
 
-export const phoneNumber = "5511989464298";
-export const subject = "Informações sobre a cliníca";
-export const message = "Olá, gostária de mais informações!";
-export const sentEmail = "mdcodes@mdcodes.com";
