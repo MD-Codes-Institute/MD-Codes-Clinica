@@ -9,7 +9,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/Footer";
 import { ReactLenis } from "lenis/react";
 import BtnTopOrBottom from "./components/BtnTopOrBottom";
-import GaleriaDeCasos from "./pages/GaleriaDeCasos";
+import BeforeAfterCases from "./pages/BeforeAfterCases";
 import ScrollToTop from "./components/ScrollToTop";
 import { useEffect, useRef } from "react";
 import { cancelFrame, frame } from "framer-motion";
@@ -57,7 +57,7 @@ function App() {
             <Route path="/clinica" element={<Clinica />} />
             <Route path="/sobre" element={<Sobre />} />
             <Route path="/contato" element={<Contato />} />
-            <Route path="/antes-&-depois" element={<GaleriaDeCasos />} />
+            <Route path="/antes-&-depois" element={<BeforeAfterCases />} />
           </Routes>
           <Footer />
         </BrowserRouter>
