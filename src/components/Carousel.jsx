@@ -1,6 +1,6 @@
-import { motion, scale, useMotionValue } from "motion/react";
-import { useState, useRef } from "react";
-import { procedimentos } from "../data/content";
+import { motion, useMotionValue } from "motion/react";
+import { useState } from "react";
+import { useLenis } from "lenis/react";
 
 const SPRING_OPTIONS = {
   type: "spring",
@@ -13,14 +13,16 @@ function CarouselScroll({ listImg }) {
   const [imgIndex, setImgIndex] = useState(Math.floor(listImg.length / 2));
   const [drag, setDrag] = useState(false);
   const dragX = useMotionValue(0);
-  const testRef = useRef(null)
+  const lenis = useLenis();
   const DRAGG_REQUIRED = 10;
 
   const onDragStart = () => {
     setDrag(true);
+    lenis?.stop();
   };
   const onDragEnd = () => {
     setDrag(false);
+    lenis?.start();
     const x = dragX.get();
     if (imgIndex < listImg.length - 1 && x <= -DRAGG_REQUIRED) {
       setImgIndex((v) => v + 1);
@@ -45,29 +47,21 @@ function CarouselScroll({ listImg }) {
         className="flex cursor-grab active:cursor-grabbing h-full"
         animate={{
           translateX:
-            window.innerWidth >= 768
-              ? `${30 - imgIndex * 40}%`
-              : `${20 - imgIndex * 60}%`,
+            window.innerWidth >= 768 ? `${30 - imgIndex * 40}%` : `${20 - imgIndex * 60}%`,
         }}
       >
-        <ImgContainer
-          listImg={listImg}
-          imgIndex={imgIndex}
-          setImgIndex={setImgIndex}
-          testRef={testRef}
-        />
+        <ImgContainer listImg={listImg} imgIndex={imgIndex} setImgIndex={setImgIndex} />
       </motion.div>
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} listImg={listImg} />
     </div>
   );
 }
 
-function ImgContainer({ imgIndex, setImgIndex, listImg,testRef }) {
+function ImgContainer({ imgIndex, setImgIndex, listImg }) {
   return (
     <>
       {listImg.map((v, i) => (
         <motion.div
-        ref={testRef}
           key={i}
           className="md:w-[40%] w-[60%] min-h-60 md:min-h-50 aspect-video shrink-0 rounded-xl bg-neutral-800 object-cover"
           style={{

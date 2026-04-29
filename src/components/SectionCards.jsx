@@ -1,4 +1,4 @@
-import { useTransform, useScroll, motion, scale } from "motion/react";
+import { useTransform, useScroll, motion } from "motion/react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -6,13 +6,12 @@ import { procedimentos } from "../data/content";
 
 function SectionCards() {
   const list = procedimentos.find((v) => v.key == "homePage");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end end"],
   });
-  const itemRef = useRef(null);
   const scrollProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
@@ -44,22 +43,18 @@ function SectionCards() {
       >
         {list.conteudo.map((v) => (
           <motion.div
-            ref={itemRef}
             style={{ scale: scrollProgress }}
             key={v.title}
             className="flex-none w-80 h-auto pb-5  md:flex md:p-5 snap-center items-center flex-col md:w-80 xl:w-87.5  2xl:w-96"
           >
-            
             <h4 className="text-center font-semibold  bg-(image:--font-gradient) bg-clip-text text-transparent">
               {v.metodo}
             </h4>
-            <h3 className="text-center  md:text-xl mb-5 text-white font-light ">
-              {v.title}
-            </h3>
+            <h3 className="text-center  md:text-xl mb-5 text-white font-light ">{v.title}</h3>
             <div className="flex items-center mx-3 shadow-[0_0px_10px_2px_rgba(255,204,102,.7)] md:shadow-[0_0px_15px_2px_rgba(255,204,102,1)] rounded-2xl">
               <img
                 src={v.urlImg}
-                onClick={() => navigate("/procedimentos") }
+                onClick={() => navigate("/procedimentos")}
                 alt="Imagem do procedimento"
                 className="h-96 w-auto object-cover rounded-2xl"
               />

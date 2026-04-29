@@ -1,27 +1,23 @@
 import { useState } from "react";
-import arrow from "../assets/arrow.png"
-import { useScroll, useMotionValueEvent, useTransform, motion} from "motion/react";
+import arrow from "../assets/arrow.png";
+import { useScroll, useMotionValueEvent, useTransform, motion } from "motion/react";
+import { useLenis } from "lenis/react";
 
 function BtnTopOrBottom() {
   const [Bottom, setBottom] = useState(true);
   const { scrollY } = useScroll();
+  const lenis = useLenis();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     // function que observa quando há scroll na pagina para mudar a direção
     latest < 300 ? setBottom(true) : setBottom(false);
   });
   const ScrollTopOrBottom = () => {
-    // function que navega entra o topo ou o footer da página
+    const height = document.documentElement.scrollHeight;
     if (Bottom) {
-      window.scrollTo({
-        top: document.documentElement.scrollHeight,
-        behavior: "smooth",
-      });
+      lenis.scrollTo(height, { duration: 0.5, easing: (t) => 1 - Math.cos((t * Math.PI) / 2) });
     } else {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      lenis.scrollTo(0, { duration: 0.5, easing: (t) => 1 - Math.cos((t * Math.PI) / 2) });
     }
   };
   const rotate = useTransform(scrollY, [300, 500], [0, 180]);
@@ -41,9 +37,7 @@ function BtnTopOrBottom() {
         style={{ rotate }}
         className="fixed z-100 bottom-5 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
       >
-        <span className="text-black text-sm font-medium mb-2 sr-only">
-          Role para baixo
-        </span>
+        <span className="text-black text-sm font-medium mb-2 sr-only">Role para baixo</span>
         <button onClick={() => ScrollTopOrBottom()}>
           <img src={arrow} alt="" className="w-12 hover:cursor-pointer" />
         </button>
