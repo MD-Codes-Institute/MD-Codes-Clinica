@@ -8,7 +8,7 @@ function ScrollToTop() {
   useEffect(() => {
     if (!lenis) return;
     lenis.scrollTo(0, { duration: 0.5, easing: (t) => 1 - Math.cos((t * Math.PI) / 2) });
-  }, [pathname]);
+  }, [pathname, lenis]);
 
   return null;
 }
