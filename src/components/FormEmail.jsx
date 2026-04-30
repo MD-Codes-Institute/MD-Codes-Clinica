@@ -64,7 +64,7 @@ function FormEmail() {
     }
   };
   return (
-    <div className="flex w-[80%] xl:w-[50%] h-[70vh] max-h-screen items-start justify-start xl:justify-center xl:items-center">
+    <div className="flex w-[80%] xl:w-[50%] xl:h-[80vh] max-h-screen items-start justify-start xl:justify-center xl:items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full flex flex-col items-center justify-center h-full gap-3 relative"
@@ -108,7 +108,7 @@ function FormEmail() {
           </div>
         ))}
         {/* button para enviar o forms */}
-        <div className="relative overflow-hidden border border-amber-200 py-1 rounded-2xl w-50 max-w-50 transition-shadow duration-300 hover:shadow-[0px_0px_10px_#ffcc66] mt-5">
+        <div className="relative overflow-hidden border border-amber-200 py-1 rounded-2xl w-50 max-w-50 transition-shadow duration-300 hover:shadow-[0px_0px_10px_#ffcc66] mt-5 min-h-8">
           <input
             type="submit"
             value={btnValue}

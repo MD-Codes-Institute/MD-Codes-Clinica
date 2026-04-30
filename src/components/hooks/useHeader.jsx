@@ -23,7 +23,16 @@ const useHeader = () => {
     setMobileMenu(false);
   }, [location.pathname]);
 
-  window.addEventListener("resize", () => window.innerWidth > 1280 && setMobileMenu(false));
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1280) {
+        setMobileMenu(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return { mobileMenu, hidden, toggleMobileMenu };
 };

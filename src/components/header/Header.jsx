@@ -19,6 +19,10 @@ function Header() {
       target.style.overflow = "";
       document.body.style.overflow = "";
     }
+    return () => {
+      target.style.overflow = "";
+      document.body.style.overflow = "";
+    };
   }, [mobileMenu]);
   return (
     <div className="bg-transparent">

@@ -1,5 +1,5 @@
 import { motion, useMotionValue } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLenis } from "lenis/react";
 
 const SPRING_OPTIONS = {
@@ -15,6 +15,13 @@ function CarouselScroll({ listImg }) {
   const dragX = useMotionValue(0);
   const lenis = useLenis();
   const DRAGG_REQUIRED = 10;
+
+  useEffect(() => {
+    return () => {
+      // Garante que o scroll global volte ao normal ao sair da tela/carrossel.
+      lenis?.start();
+    };
+  }, [lenis]);
 
   const onDragStart = () => {
     setDrag(true);
@@ -43,6 +50,8 @@ function CarouselScroll({ listImg }) {
         }}
         onDragStart={onDragStart}
         onDragEnd={onDragEnd}
+        onPointerUp={() => lenis?.start()}
+        onPointerCancel={() => lenis?.start()}
         style={{ x: dragX }}
         className="flex cursor-grab active:cursor-grabbing h-full"
         animate={{
