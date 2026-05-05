@@ -6,7 +6,7 @@ import "../../App.css";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 import HeaderMobile from "./HeaderMobile";
-import useHeader from "../hooks/useHeader";
+import useHeader from "../../hooks/useHeader";
 
 function Header() {
   const {toggleMobileMenu, hidden, mobileMenu} = useHeader()

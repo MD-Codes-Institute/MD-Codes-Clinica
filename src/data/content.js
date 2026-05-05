@@ -56,8 +56,8 @@ export const procedimentos = [
         inventore sint aperiam iusto distinctio quas sed, fugiat ipsa,
         ducimus voluptates autem aut! Perspiciatis, voluptatem
         temporibus.`,
-        urlImg1: "/woman_models/hyaluronic_old.jpg",
-        urlImg2: "/woman_models/hyaluronic_now.jpg",
+        urlImg1: "/woman_models/hyaluronic_before.png",
+        urlImg2: "/woman_models/hyaluronic_after.png",
       },
       {
         metodo: "MD Dyna Codesᵗᵐ",
