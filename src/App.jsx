@@ -13,7 +13,7 @@ import BeforeAfterCases from "./pages/BeforeAfterCases";
 import ScrollToTop from "./components/ScrollToTop";
 import { useEffect, useRef } from "react";
 import { cancelFrame, frame } from "framer-motion";
-
+import WhatsAppBtn from "./components/WhatsAppBtn";
 function App() {
   const lenisRef = useRef(null);
 
@@ -59,6 +59,7 @@ function App() {
             <Route path="/contato" element={<Contato />} />
             <Route path="/antes-&-depois" element={<BeforeAfterCases />} />
           </Routes>
+          <WhatsAppBtn />
           <Footer />
         </BrowserRouter>
       </ReactLenis>
