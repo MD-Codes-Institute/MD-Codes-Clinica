@@ -39,9 +39,9 @@ function Home() {
         </div>
 
         <SectionCards />
-        <div className="px-10">
-          <SectionBio bioKey={"bioDrHome"} />
-        </div>
+        <section className="px-10 mb-20">
+          <SectionBio />
+        </section>
       </div>
     </div>
   );
