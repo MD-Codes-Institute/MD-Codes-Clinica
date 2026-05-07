@@ -118,8 +118,8 @@ export const procedimentos = [
         inventore sint aperiam iusto distinctio quas sed, fugiat ipsa,
         ducimus voluptates autem aut! Perspiciatis, voluptatem
         temporibus.`,
-        urlImg1: "/model_codes.png",
-        urlImg2: "/model_codes.png",
+        urlImg1: "/woman_models/gabrielle_before.png",
+        urlImg2: "/woman_models/gabrielle_after.png",
       },
     ],
   },
