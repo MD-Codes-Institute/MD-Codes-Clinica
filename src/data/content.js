@@ -49,8 +49,8 @@ export const procedimentos = [
         inventore sint aperiam iusto distinctio quas sed, fugiat ipsa,
         ducimus voluptates autem aut! Perspiciatis, voluptatem
         temporibus.`,
-        urlImg1: "/woman_models/hyaluronic_before.png",
-        urlImg2: "/woman_models/hyaluronic_after.png",
+        urlImg1: "/woman_models/alessia_before.png",
+        urlImg2: "/woman_models/alessia_after.png",
       },
       {
         metodo: "MD Dyna Codesᵗᵐ",
@@ -72,8 +72,8 @@ export const procedimentos = [
         inventore sint aperiam iusto distinctio quas sed, fugiat ipsa,
         ducimus voluptates autem aut! Perspiciatis, voluptatem
         temporibus.`,
-        urlImg1: "/model_codes.png",
-        urlImg2: "/model_codes.png",
+        urlImg1: "/woman_models/faten_before.png",
+        urlImg2: "/woman_models/faten_after.png",
       },
       {
         metodo: "MD Codesᵗᵐ",
@@ -95,8 +95,8 @@ export const procedimentos = [
         inventore sint aperiam iusto distinctio quas sed, fugiat ipsa,
         ducimus voluptates autem aut! Perspiciatis, voluptatem
         temporibus.`,
-        urlImg1: "/model_codes.png",
-        urlImg2: "/model_codes.png",
+        urlImg1: "/woman_models/lucimara_before.png",
+        urlImg2: "/woman_models/lucimara_after.png",
       },
       {
         metodo: "MD Codesᵗᵐ",
