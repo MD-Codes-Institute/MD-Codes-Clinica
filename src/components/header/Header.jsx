@@ -6,10 +6,11 @@ import "../../App.css";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 import HeaderMobile from "./HeaderMobile";
-import useHeader from "../hooks/useHeader";
-
+import useHeader from "../../hooks/useHeader";
+import { useNavigate } from "react-router-dom";
 function Header() {
-  const {toggleMobileMenu, hidden, mobileMenu} = useHeader()
+  const { toggleMobileMenu, hidden, mobileMenu } = useHeader();
+  const navigate = useNavigate();
   useEffect(() => {
     const target = document.documentElement;
     if (mobileMenu) {
@@ -38,16 +39,17 @@ function Header() {
         {/* Menu desktop */}
         <nav aria-label="Global" className="flex justify-between items-center w-full p-6 lg:px-8">
           {/* logo da empresa */}
-          <div className="flex lg:flex-1">
+          <div className="flex lg:flex-1 cursor-pointer">
             <span className="sr-only">MD codes</span>
             <AnimatePresence>
               {!mobileMenu && (
-                <motion.img 
+                <motion.img
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: 50, opacity: 0 }}
                   src={LogoMDCodes}
                   alt="Logo MD Codes"
-                  className="h-8 w-auto hover:cursor-pointer"
+                  className="h-8 w-auto"
+                  onClick={() => navigate("/")}
                 />
               )}
             </AnimatePresence>

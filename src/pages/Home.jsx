@@ -1,9 +1,4 @@
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import SectionCards from "../components/SectionCards";
 import SectionBio from "../components/SectionBio";
@@ -30,7 +25,7 @@ function Home() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
               style={{ y: yText }}
-              className="sm:text-5xl font-semibold bg-linear-to-b tracking-wide from-[#d18c00] to-[#ffe7b7] bg-clip-text text-transparent text-center text-4xl relative z-50"
+              className="sm:text-5xl font-semibold bg-linear-to-b tracking-wide from-[#d18c00] to-[#ffe7b7] bg-clip-text text-transparent text-center text-4xl relative z-50 mt-30"
             >
               Bem-vindos
               <span className="text-white font-light">
@@ -44,7 +39,9 @@ function Home() {
         </div>
 
         <SectionCards />
-        <SectionBio bioKey={"bioDrHome"} />
+        <section className="px-10 mb-20">
+          <SectionBio />
+        </section>
       </div>
     </div>
   );

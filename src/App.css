@@ -21,7 +21,7 @@
   height: 100%;
   opacity: 0;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: right;
   transition: transform 500ms ease;
   background-color: #d5a037;
   border-radius: 14px 0px 0px 14px;
