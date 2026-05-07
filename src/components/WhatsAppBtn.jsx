@@ -38,15 +38,14 @@ export default function WhatsAppBtn() {
       transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
-  const toggleMessage = () => setIsVisible(!isVisible);
 
   return (
     <motion.div
       ref={ref}
       whileTap={{ scale: 0.9 }}
       onClick={navigateToWhatsApp}
-      onHoverStart={toggleMessage}
-      onHoverEnd={toggleMessage}
+      onHoverStart={() => setIsVisible(true)}
+      onHoverEnd={() => setIsVisible(false)}
       className="flex flex-row fixed top-8/9 right-5 md:top-1/2 z-9 md:-right-1 hover:shadow-[0px_0px_10px_#ffcc66] transition-shadow duration-500 items-center justify-center gap-2 rounded-2xl bg-black px-2 py-1 cursor-pointer container-btn-whats"
     >
       <img className="w-8 md:w-7" src={whatsImg} />
