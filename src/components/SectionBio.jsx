@@ -18,15 +18,15 @@ function SectionBio() {
   };
   const rotateY = useTransform(scrollYProgress, [0, 0.5], [-30, 0]);
   return (
-    <div className="w-[90vw] h-[60vh] flex flex-col xl:flex-row xl:items-center 2xl:items-start shadow-[0px_15px_40px_50px_rgba(0,0,0,1)] bg-black">
+    <div className="w-[90vw] h-full xl:h-[60vh] flex flex-col xl:flex-row xl:items-center 2xl:items-start shadow-[0px_15px_40px_50px_rgba(0,0,0,1)] bg-black">
       <motion.div
         variants={variants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-col items-center justify-center min-h-full w-[50%] gap-10 bg-black shadow-[30px_0px_25px_20px_#000] relative z-50 px-10"
+        className="flex flex-col items-center justify-center min-h-full w-full xl:w-[50%] gap-10 bg-black shadow-[30px_0px_25px_20px_#000] relative z-50 px-10"
       >
-        <h3 className="sm:text-2xl font-medium text-white text-start text-4xl relative z-50 w-full">
+        <h3 className="text-2xl  sm:text-2xl font-medium text-white text-start relative z-50 w-full">
           Métodologia
           <span className="pl-2 bg-linear-to-b tracking-wide from-[#d18c00] to-[#ffe7b7] bg-clip-text text-transparent font-bold">
             <span>MD Codes</span>
@@ -47,8 +47,8 @@ function SectionBio() {
           expressão de cada paciente.
         </p>
       </motion.div>
-      <motion.div className="w-[50%] h-full" ref={containerRef} style={{ perspective: "1000px" }}>
-        <motion.img style={{ rotateY }} className="rounded-2xl" src={amwcPhoto} />
+      <motion.div className="w-full xl:w-[50%] flex justify-center items-center h-full" ref={containerRef} style={{ perspective: "1000px" }}>
+        <motion.img style={{ rotateY }} className="rounded-2xl w-full md:w-[50%] xl:w-full " src={amwcPhoto} />
       </motion.div>
     </div>
   );
