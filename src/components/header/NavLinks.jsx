@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { navigationLinks } from "../../data/content";
 import "../../App.css";
+import { useLocation } from "react-router-dom";
+
 export default function NavLinks({ variant = "desktop" }) {
+  const location = useLocation();
   const classContainer =
     variant === "desktop"
       ? "hidden xl:flex flex-row gap-10 items-center justify-center w-[70%] px-5"
