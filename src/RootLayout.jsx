@@ -3,10 +3,20 @@ import Header from "./components/header/Header";
 import Footer from "./components/Footer";
 import WhatsAppBtn from "./components/WhatsAppBtn";
 import BtnTopOrBottom from "./components/BtnTopOrBottom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useLenis } from "lenis/react";
 
 export default function RootLayout() {
+  const location = useLocation();
+  const lenis = useLenis();
+  useEffect(() => {
+    if (!lenis) return;
+    lenis?.start();
+    lenis?.scrollTo(0, { duration: 0.5, easing: (t) => 1 - Math.cos((t * Math.PI) / 2) });
+  }, [location.pathname, lenis]);
   return (
-    <div>
+    <div>  
       <Header />
       <WhatsAppBtn />
       <main>
