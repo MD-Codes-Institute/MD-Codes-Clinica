@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import amwcPhoto from "../../public/amwc_photo.jpg";
+import amwcPhoto from "/amwc_photo.jpg";
 
 function SectionBio() {
   const containerRef = useRef(null);

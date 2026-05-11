@@ -17,18 +17,21 @@ export default function RootLayout() {
     lenis?.scrollTo(0, { duration: 0.5, easing: (t) => 1 - Math.cos((t * Math.PI) / 2) });
   }, [location.pathname, lenis]);
   return (
-    <div>  
+    <div>
       <Header />
       <WhatsAppBtn />
       <SplashCursor
-        DENSITY_DISSIPATION={10}
+        DYE_RESOLUTION={512}
+        SIM_RESOLUTION={64}
+        DENSITY_DISSIPATION={15}
         VELOCITY_DISSIPATION={0.99}
-        PRESSURE={0.01}
+        PRESSURE={0.05}
+        PRESSURE_ITERATIONS={10}
         CURL={0.3}
         SPLAT_RADIUS={0.01}
         SPLAT_FORCE={8000}
         COLOR_UPDATE_SPEED={0.5}
-        SHADING
+        SHADING={true}
         RAINBOW_MODE={false}
         COLOR="#ffcc66"
         zIndex={-1}
