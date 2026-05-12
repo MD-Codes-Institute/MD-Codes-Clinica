@@ -8,10 +8,8 @@ export default function CaseFlipBook() {
   const [page, setPage] = useState(0);
   const imgs = () => {
     const loadedImgs = [];
-    for (let i = 22; i <= 36; i++) {
-      const fileName = `../assets/galeria_casos/DRAFT_MDcodes_BOOK_(30x25)_IMCO_print_DEF_Página_${
-        i < 100 ? `0${i}` : i
-      }.jpg`;
+    for (let i = 1; i <= 15; i++) {
+      const fileName = `../assets/galeria_casos/Prancheta ${i}.png`;
       loadedImgs.push(new URL(fileName, import.meta.url).href);
     }
     return loadedImgs;

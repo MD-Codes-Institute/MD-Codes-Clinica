@@ -1,4 +1,4 @@
-import whats from "../../assets/icon-whatsapp.png";
+import whats from "../../assets/Whatsapp Simbolo.png";
 import email from "../../assets/icon-email.png";
 import insta from "../../assets/icon-instagram.png";
 
@@ -39,7 +39,7 @@ export default function SocialLinks({ variant = "desktop" }) {
         href={`mailto:${emailContact}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
           message
         )}`}
-        className="w-7 h-7"
+        className="w-9 h-9"
       >
         <img
           src={email}

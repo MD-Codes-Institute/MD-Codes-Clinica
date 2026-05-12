@@ -24,9 +24,9 @@ function SectionBio() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="flex flex-col items-center justify-center min-h-full w-full xl:w-[50%] gap-10 bg-black shadow-[30px_0px_25px_20px_#000] relative z-50 px-10"
+        className="flex flex-col items-center justify-center min-h-full w-full xl:w-[50%] gap-10 bg-black shadow-[30px_0px_25px_20px_#000] relative z-50 md:px-10"
       >
-        <h3 className="text-2xl  sm:text-2xl font-medium text-white text-start relative z-50 w-full">
+        <h3 className="text-2xl sm:text-2xl font-medium text-white text-start relative z-50 w-full">
           Métodologia
           <span className="pl-2 bg-linear-to-b tracking-wide from-[#d18c00] to-[#ffe7b7] bg-clip-text text-transparent font-bold">
             <span>MD Codes</span>
