@@ -4,9 +4,9 @@ import { useLenis } from "lenis/react";
 
 const SPRING_OPTIONS = {
   type: "spring",
-  mass: 3,
-  stiffness: 300,
-  damping: 100,
+  stiffness: 70,
+  damping: 15,
+  mass: 1,
 };
 
 function CarouselScroll({ listImg }) {
@@ -41,7 +41,7 @@ function CarouselScroll({ listImg }) {
   };
 
   return (
-    <div className="relative overflow-hidden border-amber-900 w-full">
+    <div className="relative overflow-hidden w-full">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -52,11 +52,11 @@ function CarouselScroll({ listImg }) {
         onDragEnd={onDragEnd}
         onPointerUp={() => lenis?.start()}
         onPointerCancel={() => lenis?.start()}
-        style={{ x: dragX }}
+        style={{ x: dragX, translateX: "-100%", transition:{repeat: Infinity}}}
         className="flex cursor-grab active:cursor-grabbing h-full"
         animate={{
           translateX:
-            window.innerWidth >= 768 ? `${30 - imgIndex * 40}%` : `${20 - imgIndex * 60}%`,
+            window.innerWidth >= 1024 ? `${30 - imgIndex * 40}%` : `${15 - imgIndex * 70}%`,
         }}
       >
         <ImgContainer listImg={listImg} imgIndex={imgIndex} setImgIndex={setImgIndex} />
@@ -72,13 +72,13 @@ function ImgContainer({ imgIndex, setImgIndex, listImg }) {
       {listImg.map((v, i) => (
         <motion.div
           key={i}
-          className="md:w-[40%] w-[60%] min-h-60 md:min-h-50 aspect-video shrink-0 rounded-xl bg-neutral-800 object-cover"
+          className="lg:w-[40%] w-[70%] min-h-60 md:min-h-50 aspect-video shrink-0 rounded-xl bg-neutral-800 object-cover mt-10"
           style={{
             backgroundImage: `url(${v.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          animate={{ scale: imgIndex === i ? 0.95 : 0.75 }}
+          animate={{ scale: imgIndex === i ? 1 : 0.75 }}
           onClick={() => setImgIndex(i)}
           transition={{ ...SPRING_OPTIONS, duration: 0.5 }}
         />

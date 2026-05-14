@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Procedimentos from "./pages/Procedimentos";
-import Clinica from "./pages/Clinica";
 import Sobre from "./pages/Sobre";
 import Contato from "./pages/Contato";
 import { ReactLenis } from "lenis/react";
@@ -31,7 +30,6 @@ function App() {
             <Route path="/" element={<RootLayout />}>
               <Route index element={<Home />} />
               <Route path="/procedimentos" element={<Procedimentos />} />
-              <Route path="/clinica" element={<Clinica />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/contato" element={<Contato />} />
               <Route path="/antes-&-depois" element={<BeforeAfterCases />} />

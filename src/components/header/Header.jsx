@@ -39,7 +39,7 @@ function Header() {
         {/* Menu desktop */}
         <nav aria-label="Global" className="flex justify-between items-center w-full p-6 lg:px-8">
           {/* logo da empresa */}
-          <div className="flex lg:flex-1 cursor-pointer">
+          <div className="flex lg:flex cursor-pointer">
             <span className="sr-only">MD codes</span>
             <AnimatePresence>
               {!mobileMenu && (
@@ -56,6 +56,7 @@ function Header() {
           </div>
           {/* Links para navegação */}
           <NavLinks variant="desktop" />
+
           {/* Container icones redes */}
           <SocialLinks variant="desktop" />
           {/* btn para abrir o menu mobile */}

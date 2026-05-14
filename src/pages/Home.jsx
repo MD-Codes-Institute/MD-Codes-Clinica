@@ -21,11 +21,11 @@ function Home() {
             />
             {/* Mensagem de boas vindas */}
             <motion.h1
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
+              initial={{ filter: "blur(10px)", translateY: -10, opacity: 0}}
+              animate={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
               style={{ y: yText }}
-              className="sm:text-5xl font-semibold bg-linear-to-b tracking-wide from-[#d18c00] to-[#ffe7b7] bg-clip-text text-transparent text-center text-4xl relative z-50 mt-30"
+              className="sm:text-5xl font-semibold bg-linear-to-b tracking-wide from-[#d18c00] to-[#ffe7b7] bg-clip-text text-transparent text-center text-3xl relative z-50 mt-30"
             >
               Bem-vindos
               <span className="text-white font-light">

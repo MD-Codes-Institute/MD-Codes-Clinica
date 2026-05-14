@@ -6,9 +6,13 @@ export default function BeforeAfterCases() {
       <div className="w-[90%] md:w-[80%] py-3 flex flex-col items-center justify-center gap-4">
         <h1 className="text-white font-bold text-3xl">Estudos de casos</h1>
         <p className="text-justify">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim eaque minus cumque, illo
-          numquam veritatis, perferendis reiciendis perspiciatis quaerat eligendi repudiandae
-          reprehenderit deserunt molestiae fuga corporis nihil saepe pariatur sunt?
+          Explore uma seleção de estudos de casos que demonstram, na prática, como a avaliação, o
+          planejamento e a aplicação dos MD Codes™ podem transformar diferentes necessidades
+          clínicas em resultados mais estratégicos, naturais e individualizados. <br />
+          <br />
+          Cada caso apresenta uma abordagem completa, permitindo compreender a lógica por trás das
+          decisões clínicas e a importância de um tratamento conduzido com precisão, segurança e
+          excelência.
         </p>
       </div>
       <CaseFlipBook />
