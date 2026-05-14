@@ -65,8 +65,22 @@ export const procedimentos = [
 export const navigationLinks = [
   { name: "Inicio", href: "/" },
   { name: "Procedimentos", href: "/procedimentos" },
-  { name: "Clínica", href: "/clinica" },
   { name: "Sobre", href: "/sobre" },
   { name: "Antes & Depois", href: "/antes-&-depois" },
   { name: "Contato", href: "/contato" },
+];
+
+export const aboutContent = [
+  {
+    id: "about dr",
+    title: "Liderança e Inovação: Dr. Mauricio de Maio",
+    texts:
+      "A clínica é dirigida pelo Dr. Mauricio de Maio, médico reconhecido mundialmente como um dos maiores expoentes da medicina estética contemporânea. Visionário e mestre em técnica, o Dr. de Maio é o criador do método MD Codes™ um sistema revolucionário de mapeamento facial que transformou a forma como os preenchimentos são realizados em todo o mundo. Sob sua mentoria, nossa equipe aplica os mais altos padrões de excelência para entregar não apenas tratamentos, mas uma verdadeira experiência de rejuvenescimento e harmonia.",
+  },
+  {
+    id: "about clinic",
+    title: "Inovação, Tecnologia e Sofisticação",
+    texts:
+      "Localizada na Faria Lima, o coração financeiro e estratégico de São Paulo, nossa clínica é um centro de referência em estética avançada. Projetada para oferecer soluções de alto nível, a unidade une infraestrutura tecnológica de ponta a um ambiente sofisticado, garantindo uma experiência exclusiva em cada etapa do tratamento. Conheça a nossa clínica e descubra o padrão ouro do cuidado facial.",
+  },
 ];
