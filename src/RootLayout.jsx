@@ -6,7 +6,6 @@ import BtnTopOrBottom from "./components/BtnTopOrBottom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useLenis } from "lenis/react";
-import SplashCursor from "../@/components/SplashCursor";
 
 export default function RootLayout() {
   const location = useLocation();
@@ -20,22 +19,6 @@ export default function RootLayout() {
     <div>
       <Header />
       <WhatsAppBtn />
-      <SplashCursor
-        DYE_RESOLUTION={512}
-        SIM_RESOLUTION={64}
-        DENSITY_DISSIPATION={15}
-        VELOCITY_DISSIPATION={0.99}
-        PRESSURE={0.05}
-        PRESSURE_ITERATIONS={10}
-        CURL={0.3}
-        SPLAT_RADIUS={0.01}
-        SPLAT_FORCE={8000}
-        COLOR_UPDATE_SPEED={0.5}
-        SHADING={true}
-        RAINBOW_MODE={false}
-        COLOR="#ffcc66"
-        zIndex={-1}
-      />
       <main>
         <video
           autoPlay
