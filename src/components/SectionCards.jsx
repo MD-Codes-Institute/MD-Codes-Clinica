@@ -17,7 +17,7 @@ function SectionCards() {
   return (
     <motion.div
       ref={ref}
-      className="w-full bg-transparent max-w-full xl:overflow-x-hidden m-12 h-screen flex items-center justify-center flex-col"
+      className="w-full bg-transparent max-w-full xl:overflow-x-hidden h-[90vh] flex items-center justify-center flex-col"
     >
       <h2
         className="text-4xl mb-10 text-white bg-clip-text text-center font-bold scale-100"
@@ -50,7 +50,7 @@ function SectionCards() {
             <h4 className="text-center font-semibold  bg-(image:--font-gradient) bg-clip-text text-transparent">
               {v.metodo}
             </h4>
-            <h3 className="text-center  md:text-xl mb-5 text-white font-light ">{v.title}</h3>
+            <h3 className="text-center md:text-xl mb-5 text-white font-light whitespace-nowrap">{v.title}</h3>
             <div className="flex items-center mx-3 shadow-[0_0px_10px_2px_rgba(255,204,102,.7)] md:shadow-[0_0px_15px_2px_rgba(255,204,102,1)] rounded-2xl">
               <img
                 src={v.urlImg}
@@ -65,7 +65,8 @@ function SectionCards() {
       <motion.div
         className="text-[20px] mt-10 border-b-2 border-[#FFCC66]"
         initial={{ scale: 1 }}
-        whileHover={{ scale: 1.3, cursor: "pointer" }}
+        whileHover={{ scale: 1.1, cursor: "pointer" }}
+        whileTap={{scale: 0.9}}
       >
         <Link to="/procedimentos">Veja mais</Link>
       </motion.div>
