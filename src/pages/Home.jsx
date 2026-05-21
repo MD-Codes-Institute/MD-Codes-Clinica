@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import SectionCards from "../components/SectionCards";
 import SectionBio from "../components/home/SectionBio";
-import AnimatedCounter from "../components/AnimatedCounter";
+import AnimatedCounter from "../components/global/AnimatedCounter";
 import { counterItems } from "../data/content";
 
 function Home() {
@@ -44,13 +44,20 @@ function Home() {
         {/* Section com o contador*/}
         <motion.section
           initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y:0 ,transition: { duration: 1.2, ease: "easeOut"} }}
-          viewport={{once: true}}
+          whileInView={{ opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }}
+          viewport={{ once: true }}
           className="flex flex-col lg:flex-row w-full justify-center items-center gap-7 h-100 bg-[#0000007d] shadow-[0px_0px_100px_#000]"
         >
           {counterItems.map((value) => (
-            <div className="flex flex-col items-center justify-center xl:items-end xl:justify-end" key={value.id}>
-              <div className={`whitespace-nowrap flex flex-row ${value.id === "Seringas" ? "grow" : "lg:min-w-75" } gap-1 lg:gap-2 items-center xl:justify-end`}>
+            <div
+              className="flex flex-col items-center justify-center xl:items-end xl:justify-end"
+              key={value.id}
+            >
+              <div
+                className={`whitespace-nowrap flex flex-row ${
+                  value.id === "Seringas" ? "grow" : "lg:min-w-75"
+                } gap-1 lg:gap-2 items-center xl:justify-end`}
+              >
                 <p className="bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent text-3xl xl:text-5xl 2xl:text-6xl">
                   +
                 </p>
@@ -70,7 +77,6 @@ function Home() {
         <section className="px-10 mb-20">
           <SectionBio />
         </section>
-
       </div>
     </div>
   );

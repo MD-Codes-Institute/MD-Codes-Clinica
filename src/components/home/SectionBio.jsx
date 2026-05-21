@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import imgDr from "/metodologia.jpg";
-import NavigateButton from "../NavigationButton";
+import NavigateButton from "../global/NavigationButton";
 import lineImg from "/line.png";
 function SectionBio() {
   const containerRef = useRef(null);
@@ -17,7 +17,7 @@ function SectionBio() {
   return (
     <div className="w-screen xl:w-[90vw] h-auto md:min-h-[90vh] xl:h-[60vh] flex flex-col xl:flex-row-reverse xl:items-center 2xl:items-start py-10 bg-[#00092]/10 backdrop-blur-lg rounded-2xl">
       <motion.div
-        variants={variants} 
+        variants={variants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -31,7 +31,7 @@ function SectionBio() {
         </h4>
         <img src={lineImg} alt="Imagem de uma linha" />
         {/* Imagem que so aparece em navegação mobile*/}
-        <motion.img  
+        <motion.img
           variants={variants}
           initial="hidden"
           whileInView="visible"

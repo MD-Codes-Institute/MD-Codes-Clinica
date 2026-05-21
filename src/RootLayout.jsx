@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/header/Header";
-import Footer from "./components/Footer";
-import WhatsAppBtn from "./components/WhatsAppBtn";
-import BtnTopOrBottom from "./components/BtnTopOrBottom";
+import Footer from "./components/global/Footer";
+import WhatsAppBtn from "./components/global/WhatsAppBtn";
+import BtnTopOrBottom from "./components/global/BtnTopOrBottom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useLenis } from "lenis/react";
