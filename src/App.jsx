@@ -32,7 +32,7 @@ function App() {
               <Route path="/procedimentos" element={<Procedimentos />} />
               <Route path="/sobre" element={<Sobre />} />
               <Route path="/contato" element={<Contato />} />
-              <Route path="/antes-&-depois" element={<BeforeAfterCases />} />
+              <Route path="/estudo-de-caso" element={<BeforeAfterCases />} />
             </Route>
           </Routes>
         </BrowserRouter>

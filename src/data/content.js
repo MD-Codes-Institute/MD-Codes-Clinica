@@ -66,7 +66,7 @@ export const navigationLinks = [
   { name: "Inicio", href: "/" },
   { name: "Procedimentos", href: "/procedimentos" },
   { name: "Sobre", href: "/sobre" },
-  { name: "Antes & Depois", href: "/antes-&-depois" },
+  { name: "Estudo de caso", href: "/estudo-de-caso" },
   { name: "Contato", href: "/contato" },
 ];
 

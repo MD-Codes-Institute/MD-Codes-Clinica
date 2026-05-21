@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import whatsImg from "../assets/Whatsapp Simbolo.png";
+import whatsImg from "../../assets/Whatsapp Simbolo.png";
 import { useRef, useEffect } from "react";
 import { useState } from "react";
 

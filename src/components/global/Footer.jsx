@@ -1,5 +1,4 @@
-import "../App.css";
-import LogoMDCodes from "../assets/MdCodes_Half.png";
+import LogoMDCodes from "../../assets/MdCodes_Half.png";
 import NavLinks from "../header/NavLinks";
 import SocialLinks from "../header/SocialLinks";
 
