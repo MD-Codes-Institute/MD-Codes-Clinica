@@ -66,7 +66,7 @@ export const navigationLinks = [
   { name: "Inicio", href: "/" },
   { name: "Procedimentos", href: "/procedimentos" },
   { name: "Sobre", href: "/sobre" },
-  { name: "Antes & Depois", href: "/antes-&-depois" },
+  { name: "Estudo de caso", href: "/estudo-de-caso" },
   { name: "Contato", href: "/contato" },
 ];
 
@@ -83,4 +83,22 @@ export const aboutContent = [
     texts:
       "Localizada na Faria Lima, o coração financeiro e estratégico de São Paulo, nossa clínica é um centro de referência em estética avançada. Projetada para oferecer soluções de alto nível, a unidade une infraestrutura tecnológica de ponta a um ambiente sofisticado, garantindo uma experiência exclusiva em cada etapa do tratamento. Conheça a nossa clínica e descubra o padrão ouro do cuidado facial.",
   },
+];
+
+export const counterItems = [
+  {
+    id: "Países",
+    limit: 70,
+    duration: 1.5,
+    title: "Países visitados",
+    phrase: "Impacto global",
+  },
+  {
+    id: "Seringas",
+    limit: 50,
+    qtd: "K",
+    title: "Seringas aplicadas",
+    phrase: "Precisão em escala",
+  },
+  { id: "Anos", limit: 30, title: "Anos inovando", phrase: "Excelência consolidada" },
 ];

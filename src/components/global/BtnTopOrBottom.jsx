@@ -1,5 +1,5 @@
 import { useState } from "react";
-import arrow from "../assets/arrow.png";
+import arrow from "../../assets/arrow.png";
 import { useScroll, useMotionValueEvent, useTransform, motion } from "motion/react";
 import { useLenis } from "lenis/react";
 
