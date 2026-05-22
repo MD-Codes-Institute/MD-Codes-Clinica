@@ -5,10 +5,19 @@ import { aboutContent } from "../data/content";
 import { useEffect } from "react";
 import SplitText from "../../@/components/SplitText";
 import { useMemo } from "react";
-
+import { useLocation } from "react-router-dom";
 function Sobre() {
   const [isMobile, setIsMobile] = useState(false);
   const timerRef = useRef(null);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    setTimeout(() => {
+      const element = document.querySelector(hash);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }, 1000);
+  }, [hash]);
 
   const [drImgs, clinicImgs] = useMemo(() => {
     const dr = [];
@@ -62,9 +71,12 @@ function Sobre() {
       {aboutContent.map((item) => (
         <motion.aside
           key={item.id}
+          id={item.id === "about dr" ? "dr" : "clinica"}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1, delay: 0.4 } }}
-          className={`flex flex-col ${!isMobile && "flex-row"} w-full justify-center items-center`}
+          className={`flex flex-col ${
+            !isMobile && "flex-row"
+          } w-full justify-center items-center h-screen`}
         >
           {(isMobile || item.id === "about clinic") && (
             <div className="w-full relative z-1 flex flex-col h-full items-center justify-center px-10 lg:px-20 gap-5 shadow-[50px_0px_35px_#000]">
