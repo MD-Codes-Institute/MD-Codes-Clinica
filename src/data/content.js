@@ -73,7 +73,7 @@ export const navigationLinks = [
 export const aboutContent = [
   {
     id: "about dr",
-    title: "Liderança e Inovação: Dr. Mauricio de Maio",
+    title: "Liderança e Inovação",
     texts:
       "A clínica é dirigida pelo Dr. Mauricio de Maio, médico reconhecido mundialmente como um dos maiores expoentes da medicina estética contemporânea. Visionário e mestre em técnica, o Dr. de Maio é o criador do método MD Codes™ um sistema revolucionário de mapeamento facial que transformou a forma como os preenchimentos são realizados em todo o mundo. Sob sua mentoria, nossa equipe aplica os mais altos padrões de excelência para entregar não apenas tratamentos, mas uma verdadeira experiência de rejuvenescimento e harmonia.",
   },

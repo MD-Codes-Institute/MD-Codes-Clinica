@@ -17,7 +17,7 @@ function SectionCards() {
   return (
     <motion.div
       ref={ref}
-      className="w-full bg-transparent max-w-full xl:overflow-x-hidden h-[90vh] flex items-center justify-center flex-col"
+      className="w-full bg-transparent max-w-full xl:overflow-x-hidden h-[90vh] flex items-center justify-center flex-col mt-30"
     >
       <h2
         className="text-4xl mb-10 text-white bg-clip-text text-center font-bold scale-100"
