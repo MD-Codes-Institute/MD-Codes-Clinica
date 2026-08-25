@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useLenis } from "lenis/react";
 
-
 const Modal = ({ children, closeModal }) => {
   const lenis = useLenis();
   useEffect(() => {

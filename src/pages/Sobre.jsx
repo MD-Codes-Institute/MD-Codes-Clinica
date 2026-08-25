@@ -60,10 +60,10 @@ function Sobre() {
             textAlign="center"
             from={{ opacity: 0, y: 10 }}
           />
-            <span>Cirurgião plástico</span>
-            <span>Doutor em Ciências pela FMUSP</span>
-            <span>Mestre em Medicina pela FMUSP</span>
-          <div className="flex flex-row gap-3"> 
+          <span>Cirurgião plástico</span>
+          <span>Doutor em Ciências pela FMUSP</span>
+          <span>Mestre em Medicina pela FMUSP</span>
+          <div className="flex flex-row gap-3">
             <span>CRM: 69 331 e RQE: 14 478</span>
           </div>
           <motion.img
@@ -147,7 +147,12 @@ function Sobre() {
       <div className="flex flex-wrap justify-center items-center gap-10 xl:gap-20 2xl:border 2xl:border-[#ffcc66] w-[90%] 2xl:w-full min-h-40 rounded-2xl max-w-410 py-5">
         {aboutClinicContent.map((item) => (
           <div className="max-w-80 flex flex-row items-center justify-start gap-3 h-35">
-            <img src={item.img} alt={item.title} className="w-auto h-20 object-cover" loading="lazy" />
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-auto h-20 object-cover"
+              loading="lazy"
+            />
             <div className="flex flex-col">
               <h2 className="bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent font-normal">
                 {item.title}

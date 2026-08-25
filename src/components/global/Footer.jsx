@@ -28,8 +28,8 @@ function Footer() {
     <footer className="w-[95%] mx-auto relative z-3 overflow-x-hidden pb-15">
       <hr className="line-header" />
       <section className="flex flex-col gap-5 items-center justify-center mt-10">
-        <article className="flex flex-wrap items-center justify-center py-5 gap-10 text-white uppercase font-medium">
-          <Link to="/" className="cursor-pointer font-semibold text-lg">
+        <article className="flex flex-wrap items-center justify-center py-5 gap-10 text-white font-medium">
+          <Link to="/" className="cursor-pointer font-semibold text-lg ">
             Início
           </Link>
           <Link to="/procedimentos" className="cursor-pointer font-semibold text-lg">

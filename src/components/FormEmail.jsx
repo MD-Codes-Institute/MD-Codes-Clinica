@@ -93,7 +93,9 @@ function FormEmail() {
             )}
             {item.id === "message" && (
               <>
-                <label htmlFor={item.id} className="w-[90%] font-bold mt-5">{item.label}</label>
+                <label htmlFor={item.id} className="w-[90%] font-bold mt-5">
+                  {item.label}
+                </label>
                 <textarea
                   id={item.id}
                   {...register(item.id)}

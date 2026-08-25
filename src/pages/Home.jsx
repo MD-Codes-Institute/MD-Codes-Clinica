@@ -46,7 +46,7 @@ function Home() {
               <a
                 className="w-full cursor-pointer max-w-50 md:max-w-70 flex items-center justify-center rounded-md h-10 md:h-12 bg-linear-to-b tracking-wide from-[#AF761B] to-[#b38c3f] hover:scale-95 transition-all duration-300 text-[12px] md:text-[18px] gap-5 text-center text-white font-bold"
                 href={`https://wa.me/${5511989464298}?text=${encodeURIComponent(
-                  "Olá, gostária de mais informações..."
+                  "Olá, gostária de mais informações...",
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -71,12 +71,24 @@ function Home() {
       <SectionCards />
       {/* Section com o contador*/}
       <h2 className="text-[25px] md:text-[30px] font-bold gap-3 flex flex-col xl:flex-row items-center text-center relative z-50">
-        <img src="/line.png" className="hidden xl:flex md:max-w-60 h-2" alt="" aria-hidden="true" loading="lazy" />
+        <img
+          src="/line.png"
+          className="hidden xl:flex md:max-w-60 h-2"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
         <span className="bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent whitespace-nowrap">
           MD Codes,{" "}
         </span>
         confiança que se constrói com resultados
-        <img src="/line.png" className="hidden xl:flex md:max-w-60 h-2" alt="" aria-hidden="true" loading="lazy" />
+        <img
+          src="/line.png"
+          className="hidden xl:flex md:max-w-60 h-2"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+        />
       </h2>
       <motion.section
         initial={{ opacity: 0, y: 100 }}
