@@ -1,5 +1,5 @@
 import FormEmail from "../components/FormEmail";
-import recepcaoImg from "/recepção.jpg";
+import recepcaoImg from "../../public/recepção.jpg";
 
 function Contato() {
   return (
