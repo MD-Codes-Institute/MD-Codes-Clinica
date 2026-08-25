@@ -1,6 +1,6 @@
 import { motion, animate, useTransform, useMotionValue } from "motion/react";
 
-export default function AnimatedCounter({ limit, duration = 2.5}) {
+export default function AnimatedCounter({ limit, duration = 2.5, className }) {
   const count = useMotionValue(0);
   const roundedNumber = useTransform(count, (latest) => Math.round(latest));
   const countedNumber = () => {
@@ -11,13 +11,13 @@ export default function AnimatedCounter({ limit, duration = 2.5}) {
   };
   return (
     <>
-      <motion.p
+      <motion.span
         whileInView={countedNumber}
         viewport={{ once: true }}
-        className="bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent text-3xl md:text-5xl font-bold"
+        className={`bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent font-bold ${className}`}
       >
         {roundedNumber}
-      </motion.p>
+      </motion.span>
     </>
   );
 }

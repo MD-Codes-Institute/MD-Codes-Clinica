@@ -1,7 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Header from "./components/header/Header";
 import Footer from "./components/global/Footer";
-import WhatsAppBtn from "./components/global/WhatsAppBtn";
 import BtnTopOrBottom from "./components/global/BtnTopOrBottom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -18,13 +17,13 @@ export default function RootLayout() {
   return (
     <div>
       <Header />
-      <WhatsAppBtn />
       <main>
         <video
           autoPlay
           muted
           loop
           playsInline
+          aria-hidden="true"
           className="brightness-60 object-cover "
           style={{
             position: "fixed",
@@ -35,7 +34,7 @@ export default function RootLayout() {
             minWidth: "100vw",
           }}
         >
-          <source src="/abstract-gold.mp4" type="video/mp4" />
+          <source src="/FUNDO SITE CLINICA 720p.mp4" type="video/mp4" />
           Seu navegador não suporta vídeos.
         </video>
         <Outlet />

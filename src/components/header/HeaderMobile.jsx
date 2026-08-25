@@ -13,6 +13,7 @@ export default function HeaderMobile({ toggleMobileMenu, mobileMenu }) {
     >
       <AnimatePresence>
         <motion.button
+          aria-label="Fechar menu"
           key="close-icon"
           initial={{ scale: 0 }}
           animate={{ scale: 1, transition: { duration: 0.2 } }}
@@ -32,10 +33,10 @@ export default function HeaderMobile({ toggleMobileMenu, mobileMenu }) {
             className="h-8 w-auto hover:cursor-pointer absolute top-7 left-7"
           />
         )}
-        <div key="menu-mobile" className="flex flex-col gap-5">
+        <nav key="menu-mobile" className="flex flex-col gap-5" aria-label="Navegação principal mobile">
           <NavLinks variant="mobile" />
           <SocialLinks variant="mobile" />
-        </div>
+        </nav>
       </AnimatePresence>
     </motion.div>
   );

@@ -10,6 +10,7 @@ import useHeader from "../../hooks/useHeader";
 import { useNavigate } from "react-router-dom";
 function Header() {
   const { toggleMobileMenu, hidden, mobileMenu } = useHeader();
+
   const navigate = useNavigate();
   useEffect(() => {
     const target = document.documentElement;
@@ -25,6 +26,7 @@ function Header() {
       document.body.style.overflow = "";
     };
   }, [mobileMenu]);
+  
   return (
     <div className="bg-transparent">
       <motion.header
@@ -63,6 +65,7 @@ function Header() {
           <button
             type="button"
             onClick={toggleMobileMenu}
+            aria-label={mobileMenu ? "Fechar menu" : "Abrir menu"}
             className="flex xl:hidden  text-white hover:cursor-pointer absolute top-6 right-15"
           >
             <Bars3Icon aria-hidden="true" className="size-10" />

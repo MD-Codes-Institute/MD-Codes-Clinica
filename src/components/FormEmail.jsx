@@ -43,7 +43,6 @@ function FormEmail() {
 
       emailjs.init({ publicKey: import.meta.env.VITE_EMAILJS_PUBLICKEY });
       const sendEmail = await emailjs.send(serviceID, templateID, form);
-
       console.log(sendEmail.status);
       x.set(100);
       setBtnValue("Enviado com sucesso!");
@@ -55,7 +54,7 @@ function FormEmail() {
       }, 2000);
     } catch (error) {
       alert(
-        "Não foi possível enviar o seu e-mail, estamos com problemas internos e logo resolveremos"
+        "Não foi possível enviar o seu e-mail, estamos com problemas internos e logo resolveremos",
       );
       console.log(error);
       x.set(0);
@@ -64,7 +63,7 @@ function FormEmail() {
     }
   };
   return (
-    <div className="flex w-[80%] xl:w-[50%] xl:h-[80vh] max-h-screen items-start justify-start xl:justify-center xl:items-center">
+    <div className=" flex w-[90%] xl:w-[50%] xl:h-[80vh] max-h-screen justify-center items-center py-5">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full flex flex-col items-center justify-center h-full gap-3 relative"
@@ -73,16 +72,17 @@ function FormEmail() {
           <div key={item.id} className="w-full flex flex-col items-center">
             {item.id !== "message" && (
               <>
-                <label className="text-white font-bold w-[80%]" key={i}>
+                <label htmlFor={item.id} className="text-white font-bold w-[90%]" key={i}>
                   {item.label}
                 </label>
                 <input
                   key={item.id}
+                  id={item.id}
                   {...register(item.id)}
-                  type={item.inputMode ? "numeric" : "text"}
+                  type={item.type}
                   style={item.id === "email" ? { textTransform: "lowercase" } : undefined}
-                  inputMode={item.inputMode ? item.inputMode : "text"}
-                  className={`w-[80%] outline-none px-2 py-2 text-white focus:border-b-[#ffcc66] transition-colors duration-200 ${
+                  inputMode={item.inputMode ?? "text"}
+                  className={`w-[90%] outline-none px-2 py-2 text-white focus:border-b-[#ffcc66] transition-colors duration-200 ${
                     errors[item.id] ? "border-b border-red-500  focus:ring-red-500" : "border-b"
                   }`}
                 />
@@ -93,10 +93,13 @@ function FormEmail() {
             )}
             {item.id === "message" && (
               <>
-                <label className="w-[80%] font-bold mt-5">Message:</label>
+                <label htmlFor={item.id} className="w-[90%] font-bold mt-5">
+                  {item.label}
+                </label>
                 <textarea
+                  id={item.id}
                   {...register(item.id)}
-                  className={`field-sizing-content min-h-30 border rounded-2xl w-[80%] mt-5 px-5 py-2 outline-none focus:border-[#ffcc66] focus:shadow-[0px_0px_10px_#ffcc66] transition-shadow duration-200 ${
+                  className={`text-white font-bold field-sizing-content min-h-30 border rounded-2xl w-[90%] mt-5 px-5 py-2 outline-none focus:border-[#ffcc66] focus:shadow-[0px_0px_10px_#ffcc66] transition-shadow duration-200 ${
                     errors[item.id] ? "border-b border-red-500  focus:ring-red-500" : "border-b"
                   }`}
                 />

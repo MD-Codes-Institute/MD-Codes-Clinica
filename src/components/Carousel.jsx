@@ -1,6 +1,7 @@
 import { motion, useMotionValue } from "motion/react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useLenis } from "lenis/react";
+import Modal from "./Modal";
 
 const SPRING_OPTIONS = {
   type: "spring",
@@ -10,33 +11,62 @@ const SPRING_OPTIONS = {
 };
 
 function CarouselScroll({ listImg }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [imgWidth, setImgWidth] = useState(40);
   const [imgIndex, setImgIndex] = useState(Math.floor(listImg.length / 2));
-  const [drag, setDrag] = useState(false);
+
   const dragX = useMotionValue(0);
+  const dragStartX = useRef(0);
   const lenis = useLenis();
   const DRAGG_REQUIRED = 10;
 
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+    setIsModalOpen(false);
+  };
+
+  const handleOpenModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setImgWidth(80);
+      } else if (window.innerWidth < 1024) {
+        setImgWidth(60);
+      } else {
+        setImgWidth(40);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      // Garante que o scroll global volte ao normal ao sair da tela/carrossel.
+      window.removeEventListener("resize", handleResize);
       lenis?.start();
     };
   }, [lenis]);
 
+  const centerOffset = (100 - imgWidth) / 2;
+
   const onDragStart = () => {
-    setDrag(true);
     lenis?.stop();
+    dragStartX.current = dragX.get();
   };
-  const onDragEnd = () => {
-    setDrag(false);
+
+  const onDragEnd = (e) => {
+    e.stopPropagation()
     lenis?.start();
     const x = dragX.get();
+
     if (imgIndex < listImg.length - 1 && x <= -DRAGG_REQUIRED) {
       setImgIndex((v) => v + 1);
-      console.log("advanced");
     } else if (imgIndex > 0 && x > DRAGG_REQUIRED) {
       setImgIndex((v) => v - 1);
-      console.log("go back");
     }
   };
 
@@ -49,37 +79,54 @@ function CarouselScroll({ listImg }) {
           right: 0,
         }}
         onDragStart={onDragStart}
-        onDragEnd={onDragEnd}
+        onDragEnd={(e) => onDragEnd(e)}
         onPointerUp={() => lenis?.start()}
         onPointerCancel={() => lenis?.start()}
-        style={{ x: dragX, translateX: "-100%", transition:{repeat: Infinity}}}
+        style={{ x: dragX }}
         className="flex cursor-grab active:cursor-grabbing h-full"
         animate={{
-          translateX:
-            window.innerWidth >= 1024 ? `${30 - imgIndex * 40}%` : `${15 - imgIndex * 70}%`,
+          translateX: `${centerOffset - imgIndex * imgWidth}%`,
         }}
+        transition={SPRING_OPTIONS}
       >
-        <ImgContainer listImg={listImg} imgIndex={imgIndex} setImgIndex={setImgIndex} />
+        <ImgContainer
+          listImg={listImg}
+          imgIndex={imgIndex}
+          setImgIndex={setImgIndex}
+          handleOpenModal={handleOpenModal}
+          imgWidth={imgWidth}
+        />
       </motion.div>
+      {isModalOpen && (
+        <Modal closeModal={handleCloseModal}>
+          <img className="rounded-2xl" src={selectedImage} loading="lazy"/>
+        </Modal>
+      )}
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} listImg={listImg} />
     </div>
   );
 }
 
-function ImgContainer({ imgIndex, setImgIndex, listImg }) {
+function ImgContainer({ imgIndex, listImg, imgWidth, handleOpenModal }) {
+  const handleImageClick = (e, url) => {
+    e.stopPropagation();
+    handleOpenModal(url);
+  };
+
   return (
     <>
       {listImg.map((v, i) => (
         <motion.div
           key={i}
-          className="lg:w-[40%] w-[70%] min-h-60 md:min-h-50 aspect-video shrink-0 rounded-xl bg-neutral-800 object-cover mt-10"
+          onClick={(e) => handleImageClick(e, v.url)}
+          className={`min-h-60 md:min-h-50 aspect-video shrink-0 rounded-xl bg-neutral-800 object-cover mt-10 cursor-drag`}
           style={{
+            width: `${imgWidth}%`,
             backgroundImage: `url(${v.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          animate={{ scale: imgIndex === i ? 1 : 0.75 }}
-          onClick={() => setImgIndex(i)}
+          animate={{ scale: imgIndex === i ? 1 : 0.9 }}
           transition={{ ...SPRING_OPTIONS, duration: 0.5 }}
         />
       ))}
