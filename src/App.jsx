@@ -9,6 +9,7 @@ import BeforeAfterCases from "./pages/BeforeAfterCases";
 import { useEffect, useRef } from "react";
 import { cancelFrame, frame } from "framer-motion";
 import RootLayout from "./RootLayout";
+import { NavigateProvider } from "./context/NavigateContext";
 
 function App() {
   const lenisRef = useRef(null);
@@ -26,15 +27,17 @@ function App() {
     <div className="min-h-full">
       <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<RootLayout />}>
-              <Route index element={<Home />} />
-              <Route path="/procedimentos" element={<Procedimentos />} />
-              <Route path="/sobre" element={<Sobre />} />
-              <Route path="/contato" element={<Contato />} />
-              <Route path="/estudo-de-caso" element={<BeforeAfterCases />} />
-            </Route>
-          </Routes>
+          <NavigateProvider>
+            <Routes>
+              <Route path="/" element={<RootLayout />}>
+                <Route index element={<Home />} />
+                <Route path="/procedimentos" element={<Procedimentos />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="/contato" element={<Contato />} />
+                <Route path="/estudo-de-caso" element={<BeforeAfterCases />} />
+              </Route>
+            </Routes>
+          </NavigateProvider>
         </BrowserRouter>
       </ReactLenis>
     </div>
