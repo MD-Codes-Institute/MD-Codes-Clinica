@@ -28,8 +28,8 @@ function FormEmail() {
   const [disabledBtn, setDisabledBtn] = useState(false);
   const [btnValue, setBtnValue] = useState("Enviar");
 
-  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const serviceID = import.meta.env.EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.EMAILJS_TEMPLATE_ID;
 
   const x = useMotionValue(0);
   const progressWidth = useTransform(x, [0, 70, 100], ["0%", "70%", "100%"]);
@@ -41,7 +41,7 @@ function FormEmail() {
       x.set(70);
       setBtnValue("Enviando...");
 
-      emailjs.init({ publicKey: import.meta.env.VITE_EMAILJS_PUBLICKEY });
+      emailjs.init({ publicKey: import.meta.env.EMAILJS_PUBLICKEY });
       const sendEmail = await emailjs.send(serviceID, templateID, form);
       console.log(sendEmail.status);
       x.set(100);

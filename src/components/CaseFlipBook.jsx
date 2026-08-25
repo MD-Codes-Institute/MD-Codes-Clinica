@@ -6,14 +6,22 @@ export default function CaseFlipBook() {
   const [width, setWidth] = useState(700);
   const [height, setHeight] = useState(600);
   const [page, setPage] = useState(0);
+
   const imgs = () => {
-    const loadedImgs = [];
-    for (let i = 1; i <= 39; i++) {
-      const fileName = `../assets/galeria_casos/Prancheta ${i}.png`;
-      loadedImgs.push(new URL(fileName, import.meta.url).href);
-    }
-    return loadedImgs;
+    const globImages = import.meta.glob("/src/assets/galeria_casos/Prancheta *.png", {
+      eager: true,
+    });
+
+    const loadedImgs = Object.values(globImages)
+      .map((module) => module.default)
+      .sort((a, b) => {
+        const numA = parseInt(a.match(/\d+/)[0]);
+        const numB = parseInt(b.match(/\d+/)[0]);
+        return numA - numB;
+      });
   };
+
+  const images = imgs();
   useEffect(() => {
     const handleResize = () => {
       const w = window.innerWidth;
@@ -46,7 +54,6 @@ export default function CaseFlipBook() {
   const onFlip = useCallback((e) => {
     setPage(e.data);
   }, []);
-  const images = imgs();
   return (
     <section>
       <HTMLFlipBook
@@ -60,7 +67,12 @@ export default function CaseFlipBook() {
         ref={book}
       >
         {images.map((src, i) => (
-          <img key={i} src={src} alt="Imagem de casos clínicos feitos pelo Dr. Maurício de Maio" loading="lazy"/>
+          <img
+            key={i}
+            src={src}
+            alt="Imagem de casos clínicos feitos pelo Dr. Maurício de Maio"
+            loading="lazy"
+          />
         ))}
       </HTMLFlipBook>
       <div className="flex flex-row gap-5 mb-10 mt-10 items-center justify-center">

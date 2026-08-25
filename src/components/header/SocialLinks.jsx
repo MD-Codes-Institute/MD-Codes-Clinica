@@ -5,8 +5,8 @@ import insta from "../../assets/icon-instagram.png";
 export default function SocialLinks({ variant = "desktop" }) {
   const message = "Olá, gostária de mais informações!";
   const subject = "Informações sobre a cliníca";
-  const emailContact = import.meta.env.VITE_CONTACT_EMAIL;
-  const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
+  const emailContact = import.meta.env.CONTACT_EMAIL;
+  const phoneNumber = import.meta.env.PHONE_NUMBER;
 
   const classContainer =
     variant === "desktop"
