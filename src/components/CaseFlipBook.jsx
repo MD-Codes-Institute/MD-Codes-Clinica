@@ -19,6 +19,8 @@ export default function CaseFlipBook() {
         const numB = parseInt(b.match(/\d+/)[0]);
         return numA - numB;
       });
+
+    return loadedImgs;
   };
 
   const images = imgs();
