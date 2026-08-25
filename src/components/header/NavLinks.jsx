@@ -15,10 +15,10 @@ export default function NavLinks({ variant = "desktop" }) {
         <Link
           key={v.name + i}
           to={v.href}
-          className={`text-md font-semibold navigation-link-header ${
+          className={`text-md font-semibold ${
             v.href === location.pathname
-              ? `text-shadow-2xs text-shadow-amber-200`
-              : `text-shadow-none`
+              ? "navigation-link-header-active"
+              : "navigation-link-header"
           } text-white`}
         >
           {v.name}
