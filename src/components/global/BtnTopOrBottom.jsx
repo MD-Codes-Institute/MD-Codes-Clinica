@@ -38,8 +38,11 @@ function BtnTopOrBottom() {
         className="fixed z-100 bottom-5 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
       >
         <span className="text-black text-sm font-medium mb-2 sr-only">Role para baixo</span>
-        <button onClick={() => ScrollTopOrBottom()}>
-          <img src={arrow} alt="" className="w-12 hover:cursor-pointer" />
+        <button
+          onClick={() => ScrollTopOrBottom()}
+          aria-label={Bottom ? "Navegar para o fim da página" : "Navegar para o topo da página"}
+        >
+          <img src={arrow} alt="" className="w-12 hover:cursor-pointer" loading="lazy"/>
         </button>
       </motion.div>
     </div>

@@ -8,7 +8,7 @@ export default function CaseFlipBook() {
   const [page, setPage] = useState(0);
   const imgs = () => {
     const loadedImgs = [];
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 39; i++) {
       const fileName = `../assets/galeria_casos/Prancheta ${i}.png`;
       loadedImgs.push(new URL(fileName, import.meta.url).href);
     }
@@ -60,7 +60,7 @@ export default function CaseFlipBook() {
         ref={book}
       >
         {images.map((src, i) => (
-          <img key={i} src={src} alt="Imagem de casos clínicos feitos pelo Dr. Maurício de Maio" />
+          <img key={i} src={src} alt="Imagem de casos clínicos feitos pelo Dr. Maurício de Maio" loading="lazy"/>
         ))}
       </HTMLFlipBook>
       <div className="flex flex-row gap-5 mb-10 mt-10 items-center justify-center">
