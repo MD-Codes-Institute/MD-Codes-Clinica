@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @theme {
   --font-montserrat: "Montserrat", serif;
   --font-garamond: "Cormorant Garamond", sans-serif;
+  --breakpoint-laptop: 900px;
 }
 
 :root {
-   font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif;
   --font-gradient: linear-gradient(180deg, #d18c00, #ffe7b7);
   line-height: 1.5;
   font-weight: 400;
@@ -17,6 +17,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: dark;
 }
 
 video {
@@ -27,11 +28,6 @@ video {
   height: 100dvh; /* Ou 100dvh */
   object-fit: cover;
   z-index: -1; /* Fica atrás de tudo */
-}
-
-:root {
-  /* Isso avisa o iPhone para deixar a barra transparente/escura */
-  color-scheme: dark;
 }
 
 html,
@@ -78,4 +74,27 @@ input[type="number"] {
 /* Muda a cor do arrastador quando o mouse passa por cima */
 ::-webkit-scrollbar-thumb:hover {
   background: #ccc;
+}
+
+/* Breakpoint customizado laptop (900px) */
+@media (min-width: 900px) {
+  .laptop\:flex-row {
+    flex-direction: row;
+  }
+
+  .laptop\:items-center {
+    align-items: center;
+  }
+
+  .laptop\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .laptop\:mb-55\! {
+    margin-bottom: 13.75rem !important;
+  }
+
+  .laptop\:bg-transparent\! {
+    background-color: transparent !important;
+  }
 }
