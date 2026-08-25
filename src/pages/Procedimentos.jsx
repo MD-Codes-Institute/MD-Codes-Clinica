@@ -30,7 +30,8 @@ function Procedimentos() {
     },
   };
   return (
-    <section className="flex w-auto justify-center xl:items-center flex-col bg-black mt-20 h-full">
+    <section className="flex w-auto justify-center xl:items-center flex-col mt-20 h-full">
+      <h1 className="sr-only">Procedimentos estéticos - Clínica Dr. Maurício de Maio</h1>
       <motion.div
         variants={containerVariants}
         className="w-full"
@@ -43,29 +44,23 @@ function Procedimentos() {
           // container do card
           <motion.div
             key={i}
-            className="h-full mx-auto w-[90%] flex flex-row justify-center items-center my-7 border border-[#ffcc66a7] shadow-[0px_0px_10px_rgba(255,204,102,1)] rounded-[40px]  relative z-1 overflow-hidden"
+            className="h-full mx-auto w-[90%] flex flex-row justify-center items-center my-7 border border-[#ffcc6648] shadow-[0px_0px_10px_rgba(255,204,102,0.8)] rounded-[40px] relative z-1 overflow-hidden"
             variants={itemVariants}
           >
-            {i % 2 == 0 ? (
-              <div className="bg-linear-to-r flex flex-col xl:flex-row items-center justify-center tracking-wide from-[#00000] to-[#464646] min-h-full rounded-[40px]">
-                <div className="flex flex-col w-full justify-center xl:w-[50%] xl:h-full container-shadow">
-                  <h4 className="metodo-h4">{v.metodo}</h4>
-                  <h3 className="titulo-h3 text-[15px] md:text-[20px] px-10">{v.title}</h3>
-                  <SlideImg img1={v.urlImg1} img2={v.urlImg2} />
-                </div>
-                <p className="relative z-1 p-15 w-full text-center">{v.text}</p>
+            <div
+              className={`bg-linear-to-r flex flex-col ${
+                i % 2 == 0 ? "xl:flex-row-reverse" : "xl:flex-row"
+              } items-center justify-center bg-[#00092]/10 backdrop-blur-lg min-h-full rounded-[40px]`}
+            >
+              <div className="flex flex-col items-center justify-center">
+                <h4 className="metodo-h4">{v.metodo}</h4>
+                <h3 className="text-[15px] md:text-[20px] px-10">{v.title}</h3>
+                <p className=" w-full relative z-10 text-center mt-5 px-10">{v.text}</p>
               </div>
-            ) : (
-              <div className="bg-linear-to-l flex flex-col xl:flex-row items-center tracking-wide from-[#00000] to-[#464646] min-h-full rounded-2xl">
-                <p className="hidden xl:flex relative z-1 w-full px-10 text-center">{v.text}</p>
-                <div className="flex flex-col h-full container-shadow">
-                  <h4 className="metodo-h4 ">{v.metodo}</h4>
-                  <h3 className="titulo-h3 text-[15px] md:text-[20px] px-10">{v.title}</h3>
-                  <SlideImg img1={v.urlImg1} img2={v.urlImg2} />
-                </div>
-                <p className="flex xl:hidden relative z-1 w-full p-15 text-center">{v.text}</p>
+              <div className="flex flex-col w-full justify-center xl:w-[50%] xl:h-full container-shadow">
+                <SlideImg img1={v.urlImg1} img2={v.urlImg2} />
               </div>
-            )}
+            </div>
           </motion.div>
         ))}
       </motion.div>
