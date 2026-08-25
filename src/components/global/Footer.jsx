@@ -1,6 +1,5 @@
-import LogoMDCodes from "../../assets/MdCodes_Half.png";
-import NavLinks from "../header/NavLinks";
-import SocialLinks from "../header/SocialLinks";
+import { useNavigation } from "../../context/NavigateContext";
+import { Link } from "react-router-dom";
 
 export const Mapa = () => {
   const urlMapa =
@@ -8,12 +7,13 @@ export const Mapa = () => {
   return (
     <div>
       <iframe
+        title="Localização da clínica"
         src={urlMapa}
-        className="w-full md:w-100 h-60"
+        className="w-[90vw] h-auto md:h-55"
         style={{
           border: 1,
           borderRadius: 10,
-          boxShadow: "0px 0px 20px 1px #FFCC66",
+          boxShadow: "0px 0px 10px 1px #FFCC66",
         }}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
@@ -23,22 +23,38 @@ export const Mapa = () => {
 };
 
 function Footer() {
+  const { goTo } = useNavigation();
   return (
-    <footer className="w-[95%] mx-auto relative z-3 overflow-x-hidden">
+    <footer className="w-[95%] mx-auto relative z-3 overflow-x-hidden pb-15">
       <hr className="line-header" />
-      <section className="flex flex-col justify-center items-center xl:flex-row xl:justify-between xl:items-start h-full px-5 mb-20">
-        <div className="flex flex-col md:justify-between p-10 xl:min-h-130">
-          <img src={LogoMDCodes} alt="Imagem MD Codes" className="w-70 h-10" />
-          <p className="hidden xl:flex mt-12 md:mt-0">©2026 MDMaio Incorp Edu Ltda.</p>
-        </div>
-        <div className="flex flex-col justify-between gap-5 my-10 text-[17px]">
-          <NavLinks variant="mobile" />
-          <SocialLinks variant="mobile" />
-        </div>
-        <div className="flex flex-col pb-15 gap-5 xl:h-96 items-center justify-center mt-4 mb-20 xl:mt-0">
-          <Mapa />
-          <p className="flex xl:hidden">©2026 MDMaio Incorp Edu Ltda.</p>
-        </div>
+      <section className="flex flex-col gap-5 items-center justify-center mt-10">
+        <article className="flex flex-wrap items-center justify-center py-5 gap-10 text-white uppercase font-medium">
+          <Link to="/" className="cursor-pointer font-semibold text-lg">
+            Início
+          </Link>
+          <Link to="/procedimentos" className="cursor-pointer font-semibold text-lg">
+            Procedimentos
+          </Link>
+          <button
+            onClick={() => goTo("/sobre", "#clinica")}
+            className="cursor-pointer font-semibold text-lg"
+          >
+            Clínica
+          </button>
+          <button
+            onClick={() => goTo("/sobre", "#dr")}
+            className="cursor-pointer font-semibold text-lg"
+          >
+            Dr. Maurício de Maio
+          </button>
+          <Link to="/contato" className="cursor-pointer font-semibold text-lg">
+            Contato
+          </Link>
+        </article>
+        <Mapa />
+        <p className="text-white font-bold text-sm mt-4">
+          ©2026 MDMaio Incorp Edu Ltda. Todos os direitos reservados.
+        </p>
       </section>
     </footer>
   );
