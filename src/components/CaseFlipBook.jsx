@@ -11,14 +11,13 @@ export default function CaseFlipBook() {
     const globImages = import.meta.glob("/src/assets/galeria_casos/Prancheta *.png", {
       eager: true,
     });
-
-    const loadedImgs = Object.values(globImages)
-      .map((module) => module.default)
-      .sort((a, b) => {
-        const numA = parseInt(a.match(/\d+/)[0]);
-        const numB = parseInt(b.match(/\d+/)[0]);
+    const loadedImgs = Object.entries(globImages)
+      .sort(([pathA], [pathB]) => {
+        const numA = parseInt(pathA.match(/\d+/)[0]);
+        const numB = parseInt(pathB.match(/\d+/)[0]);
         return numA - numB;
-      });
+      })
+      .map(([, module]) => module.default);
 
     return loadedImgs;
   };
@@ -70,6 +69,8 @@ export default function CaseFlipBook() {
       >
         {images.map((src, i) => (
           <img
+            draggable="false"
+            className="[-webkit-user-drag:none]"
             key={i}
             src={src}
             alt="Imagem de casos clínicos feitos pelo Dr. Maurício de Maio"
