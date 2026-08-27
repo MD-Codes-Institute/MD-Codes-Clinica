@@ -146,7 +146,7 @@ function Sobre() {
 
       <div className="flex flex-wrap justify-center items-center gap-10 xl:gap-20 2xl:border 2xl:border-[#ffcc66] w-[90%] 2xl:w-full min-h-40 rounded-2xl max-w-410 py-5">
         {aboutClinicContent.map((item) => (
-          <div className="max-w-80 flex flex-row items-center justify-start gap-3 h-35">
+          <div key={item.id} className="max-w-80 flex flex-row items-center justify-start gap-3 h-35">
             <img
               src={item.img}
               alt={item.title}

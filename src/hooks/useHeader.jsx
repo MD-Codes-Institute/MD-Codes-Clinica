@@ -1,13 +1,32 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { useMotionValueEvent, useScroll} from "motion/react";
+import { useMotionValueEvent, useScroll } from "motion/react";
 import { useLocation } from "react-router-dom";
+import { useLenis } from "lenis/react";
 
 const useHeader = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
+  const lenis = useLenis();
   const location = useLocation();
+
+  useEffect(() => {
+    if (mobileMenu) {
+      lenis?.stop();
+    } else {
+      lenis?.start();
+    }
+  }, [mobileMenu, lenis]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setMobileMenu(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 100) {
@@ -20,7 +39,7 @@ const useHeader = () => {
     setMobileMenu(!mobileMenu);
   };
   useEffect(() => {
-    setMobileMenu(false);
+    requestAnimationFrame(() => setMobileMenu(false));
   }, [location.pathname]);
 
   useEffect(() => {
@@ -29,9 +48,17 @@ const useHeader = () => {
         setMobileMenu(false);
       }
     };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    let timeoutId;
+    const debouncedResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleResize, 500);
+    };
+    handleResize();
+    window.addEventListener("resize", debouncedResize);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", debouncedResize);
+    };
   }, []);
 
   return { mobileMenu, hidden, toggleMobileMenu };
