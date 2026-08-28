@@ -8,6 +8,7 @@ import certificateIcon from "../assets/icons/certificate-icon.png";
 import infinityIcon from "../assets/about_clinic/infinito-icon.png";
 import securyIcon from "../assets/about_clinic/seguranca-icon.png";
 import userIcon from "../assets/about_clinic/user-icon.png";
+import traditionIcon from "../assets/icons/tradition.png";
 
 export const procedimentos = [
   {
@@ -103,23 +104,22 @@ export const aboutContent = [
   {
     id: "about dr",
     title: "Liderança e Excelência",
-    texts: `A excelência em medicina estética começa pela forma como cada paciente é compreendido.
+    texts: `A  excelência começa pela forma como cada paciente é compreendido. 
 
-    À frente da clínica está o Dr. Maurício de Maio, referência mundial em injetáveis e criador do MD Codes™, metodologia reconhecida internacionalmente por transformar a maneira de avaliar e tratar o rosto.
+Dr. Maurício de Maio, referência mundial em injetáveis e criador do MD Codes™, metodologia reconhecida internacionalmente por transformar a maneira de avaliar e tratar o rosto. 
 
-    Sob sua direção, cada paciente recebe um olhar individualizado, guiado por conhecimento, precisão e um elevado padrão de cuidado. Cada decisão é cuidadosamente planejada para respeitar suas características, necessidades e objetivos.
+Cada paciente recebe um olhar individualizado, guiado por conhecimento, precisão e um elevado padrão de cuidado. Cada decisão é cuidadosamente planejada para respeitar suas características, necessidades e objetivos. 
 
-    Mais do que buscar resultados sofisticados, buscamos resultados que façam sentido para você, naturais, equilibrados e fiéis à sua identidade.
+Mais do que buscar resultados sofisticados, buscamos resultados que façam sentido para você, naturais, equilibrados e fiéis à sua identidade.
+
     `,
   },
   {
     id: "about clinic",
     title: "Inovação, Tecnologia e Sofisticação",
-    texts: `Localizada na Faria Lima, um dos principais centros financeiros e estratégicos de São Paulo, a Clínica Dr. Maurício de Maio é referência em medicina estética avançada.
+    texts: `Localizada na Faria Lima, um dos principais centros financeiros e estratégicos de São Paulo, a Clínica Dr. Maurício de Maio é projetada para oferecer uma experiência de excelência em cada detalhe. 
 
-            Projetada para oferecer uma experiência de excelência em cada detalhe, a clínica combina tecnologia de ponta, conforto e sofisticação em um ambiente pensado para proporcionar segurança, privacidade e cuidado em todas as etapas do tratamento.
-
-            Conheça a Clínica Dr. Maurício de Maio e descubra uma abordagem diferenciada em tratamentos faciais minimamente invasivos, conduzida com precisão, conhecimento e atenção à individualidade de cada paciente.`,
+            A clínica combina tecnologia de ponta, conforto e sofisticação em um ambiente pensado para proporcionar segurança, privacidade e cuidado em todas as etapas do tratamento.`,
   },
 ];
 
@@ -141,7 +141,13 @@ export const aboutClinicContent = [
     id: "referencia",
     img: infinityIcon,
     title: "REFERÊNCIA EM EXCELÊNCIA",
-    description: "Excelência reconhecida por pacientes no Brasil e no mundo",
+    description: "Excelência reconhecida por pacientes no Brasil e no exterior",
+  },
+  {
+    id: "tradicao",
+    img: traditionIcon,
+    title: "Tradição",
+    description: "Fundada em 1992, reunindo mais de três décadas de experiência e inovação.",
   },
 ];
 
@@ -162,19 +168,11 @@ export const counterItems = [
     imgUrl: syringeIcon,
   },
   {
-    id: "Anos",
+    id: "Experiência e inovação",
     limit: 30,
     qtd: "Anos",
-    title: "Inovando",
+    title: "de experiência e inovação",
     phrase: "Excelência consolidada",
     imgUrl: trophyIcon,
-  },
-  {
-    id: "Experiência´",
-    limit: 30,
-    qtd: "Anos",
-    title: "de experiência",
-    phrase: "em cirurgia plástica",
-    imgUrl: certificateIcon,
   },
 ];
