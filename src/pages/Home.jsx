@@ -70,7 +70,10 @@ function Home() {
       {/* Section com os cards dos procedimentos*/}
       <SectionCards />
       {/* Section com o contador*/}
-      <h2 className="text-[25px] md:text-[30px] font-bold gap-3 flex flex-col xl:flex-row items-center text-center relative z-50">
+      <h2
+        style={{ fontSize: "clamp(1.4rem, 2vw, 1.875rem)" }}
+        className="text-[25px] md:text-[30px] font-bold gap-3 flex flex-col xl:flex-row items-center text-center relative z-50"
+      >
         <img
           src="/line.png"
           className="hidden xl:flex md:max-w-60 h-2"
@@ -94,31 +97,31 @@ function Home() {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }}
         viewport={{ once: true }}
-        className="flex flex-wrap items-center justify-center gap-5 md:gap-10 w-full md:w-[90%] bg-[#00000077] shadow-[0px_0px_100px_#000] mb-20 place-items-center"
+        className="flex flex-wrap items-center justify-center gap-5 md:gap-10 w-full md:w-[90%] bg-[#00000077] shadow-[0px_0px_100px_#000] mb-10"
       >
         {counterItems.map((value) => (
-          <article
-            key={value.id}
-            className="flex flex-row gap-2 items-center justify-center min-h-50"
-          >
+          <div key={value.id} className="flex flex-row gap-1 items-center justify-center h-auto">
             <img src={value.imgUrl} className="h-12.5 md:h-full" alt={value.id} loading="lazy" />
-            <div className="flex flex-col justify-center items-start min-h-25">
-              <div className="whitespace-nowrap flex flex-row justify-center items-center gap-1 md:gap-2 text-[25px] xl:text-[30px] font-bold bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent">
-                {value.id === "Países" && (
-                  <span className="text-[1.2rem] xl:text-[30px]">MD Codes presente em </span>
-                )}
-                {value.limit && (
-                  <span className="min-w-10 md:min-w-15 text-center text-[25px] xl:text-[30px]">
-                    +
-                    <AnimatedCounter limit={value.limit} duration={value.duration} />
-                  </span>
-                )}
-                <span className="text-[25px] xl:text-[30px]">{value.qtd ?? "países"}</span>
-                <h3 className="text-[25px] xl:text-[30px]">{value.title ?? ""}</h3>
-              </div>
-              <h4 className="text-[1.2rem] xl:text-[20px]">{value.phrase}</h4>
+            <div className="flex flex-col justify-center items-center md:items-start min-h-25">
+              <p
+                className="flex gap-1 bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent font-bold"
+                style={{ fontSize: "clamp(1.1rem, 2vw, 1.575rem)" }}
+              >
+                {value.id === "Países" && <span>MD Codes presente </span>}
+                {""}+{""}
+                <AnimatedCounter
+                  className={"md:w-8"}
+                  limit={value.limit}
+                  duration={value.duration}
+                />
+                <span>{value.qtd ?? "Países"}</span>
+                <span>{value.title}</span>
+              </p>
+              <p style={{ color: "#fff", fontSize: "clamp(1.2rem, 2vw, 1.375rem)" }}>
+                {value.phrase}
+              </p>
             </div>
-          </article>
+          </div>
         ))}
       </motion.section>
 
