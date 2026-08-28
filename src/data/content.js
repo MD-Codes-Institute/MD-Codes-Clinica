@@ -4,7 +4,6 @@ import treatedFace from "../assets/icons/treated-face.png";
 import countryIcon from "../assets/icons/countries-icon.png";
 import trophyIcon from "../assets/icons/trophy-icon.png";
 import syringeIcon from "../assets/icons/syringe-icon.png";
-import certificateIcon from "../assets/icons/certificate-icon.png";
 import infinityIcon from "../assets/about_clinic/infinito-icon.png";
 import securyIcon from "../assets/about_clinic/seguranca-icon.png";
 import userIcon from "../assets/about_clinic/user-icon.png";
