@@ -43,7 +43,7 @@ function Sobre() {
     <section className="mt-30 flex flex-col justify-center gap-5 items-center py-10 overflow-hidden w-full bg-[#000000d3]">
       <section
         id="dr"
-        className="flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-start w-[90%] h-auto lg:h-[80vh]"
+        className="flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-start w-[90%] h-auto"
       >
         <div className="w-[80%] flex flex-col gap-2 items-center justify-center lg:justify-start mt-10 lg:w-[50vw] relative z-10 lg:px-10 shadow-[0px_-80px_50px_#000] lg:shadow-none">
           <motion.h1
@@ -94,7 +94,7 @@ function Sobre() {
           />
         </div>
         <img
-          className="xl:absolute xl:right-20 2xl:right-50 w-[80vw] md:w-[60vw] lg:w-[40vw] brightness-85 rounded-2xl"
+          className="w-full lg:w-110 xl:w-140 2xl:w-160 brightness-85 rounded-2xl"
           src={imgDr}
           alt="Dr. Maurício de Maio"
           loading="lazy"
