@@ -19,7 +19,7 @@ function Home() {
           initial={{ filter: "blur(10px)", translateY: -10, opacity: 0 }}
           animate={{ filter: "blur(0px)", translateY: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col gap-1 z-50 flex-2 min-w-100 max-w-200 px-5 md:ml-20 md:px-0 -mt-70 xl:mt-0 bg-[#000000] shadow-[0px_0px_50px_50px_#000]"
+          className="flex flex-col gap-1 z-50 flex-2 min-w-100 xl:max-w-200 px-5 md:ml-20 md:px-0 -mt-70 xl:mt-0 bg-[#000000] shadow-[0px_0px_50px_50px_#000]"
         >
           <h1 className="text-3xl sm:text-5xl text-start font-semibold flex flex-col z-50">
             A ciência por trás da

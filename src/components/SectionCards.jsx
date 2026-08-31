@@ -19,7 +19,7 @@ function SectionCards() {
       className="w-full bg-transparent max-w-full overflow-y-hidden xl:overflow-x-hidden mt-20 flex items-center h-auto justify-center flex-col"
     >
       <h2
-        className="text-4xl mb-10 text-white text-center font-bold scale-100"
+        className="text-3xl md:text-4xl mb-10 text-white text-center font-bold scale-100"
         style={{ textShadow: "0px 2px 5px rgba(255,204,102,1)" }}
       >
         Procedimentos
