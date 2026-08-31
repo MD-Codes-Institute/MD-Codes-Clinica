@@ -127,20 +127,20 @@ export const aboutClinicContent = [
     id: "securanca",
     img: securyIcon,
     title: "SEGURANÇA",
-    description: "Protocolos rigorosos e materiais de alta qualidade para sua total segurança",
+    description: "Protocolos rigorosos e materiais de alta qualidade para sua total segurança.",
   },
   {
     id: "experiencia",
     img: userIcon,
     title: "EXPERIÊNCIA EXCLUSIVA",
     description:
-      "Do primeiro contato ao acompanhamento dos resultados, cada etapa é conduzida com discrição, atenção e cuidado",
+      "Do primeiro contato ao acompanhamento dos resultados, cada etapa é conduzida com discrição, atenção e cuidado.",
   },
   {
     id: "referencia",
     img: infinityIcon,
     title: "REFERÊNCIA EM EXCELÊNCIA",
-    description: "Excelência reconhecida por pacientes no Brasil e no exterior",
+    description: "Excelência reconhecida por pacientes no Brasil e no exterior.",
   },
   {
     id: "tradicao",
