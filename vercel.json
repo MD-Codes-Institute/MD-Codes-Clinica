@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/site/principal",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
