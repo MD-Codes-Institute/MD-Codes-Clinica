@@ -10,6 +10,8 @@ import { useEffect, useRef } from "react";
 import { cancelFrame, frame } from "framer-motion";
 import RootLayout from "./RootLayout";
 import { NavigateProvider } from "./context/NavigateContext";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   const lenisRef = useRef(null);
@@ -40,6 +42,8 @@ function App() {
           </NavigateProvider>
         </BrowserRouter>
       </ReactLenis>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
