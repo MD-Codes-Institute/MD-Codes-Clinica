@@ -6,7 +6,6 @@ import trophyIcon from "../assets/icons/trophy-icon.png";
 import syringeIcon from "../assets/icons/syringe-icon.png";
 import infinityIcon from "../assets/about_clinic/infinito-icon.png";
 import securyIcon from "../assets/about_clinic/seguranca-icon.png";
-import userIcon from "../assets/about_clinic/user-icon.png";
 import traditionIcon from "../assets/icons/tradition.png";
 
 export const procedimentos = [
@@ -128,13 +127,6 @@ export const aboutClinicContent = [
     img: securyIcon,
     title: "SEGURANÇA",
     description: "Protocolos rigorosos e materiais de alta qualidade para sua total segurança.",
-  },
-  {
-    id: "experiencia",
-    img: userIcon,
-    title: "EXPERIÊNCIA EXCLUSIVA",
-    description:
-      "Do primeiro contato ao acompanhamento dos resultados, cada etapa é conduzida com discrição, atenção e cuidado.",
   },
   {
     id: "referencia",

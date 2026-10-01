@@ -52,10 +52,10 @@ function Procedimentos() {
                 i % 2 == 0 ? "xl:flex-row-reverse" : "xl:flex-row"
               } items-center justify-center bg-[#00092]/10 backdrop-blur-lg min-h-full rounded-[40px]`}
             >
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center py-5">
                 <h4 className="metodo-h4">{v.metodo}</h4>
                 <h3 className="text-[15px] md:text-[20px] px-10">{v.title}</h3>
-                <p className=" w-full relative z-10 text-center mt-5 px-10">{v.text}</p>
+                <p className=" w-full text-[1rem] relative z-10 text-center mt-5 px-15">{v.text}</p>
               </div>
               <div className="flex flex-col w-full justify-center xl:w-[50%] xl:h-full container-shadow">
                 <SlideImg img1={v.urlImg1} img2={v.urlImg2} />
