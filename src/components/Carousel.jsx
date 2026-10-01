@@ -1,10 +1,10 @@
-import { motion, useMotionValue } from "motion/react";
-import { useEffect, useState, useRef } from "react";
-import { useLenis } from "lenis/react";
-import Modal from "./Modal";
+import { motion, useMotionValue } from 'motion/react';
+import { useEffect, useState, useRef } from 'react';
+import { useLenis } from 'lenis/react';
+import Modal from './Modal';
 
 const SPRING_OPTIONS = {
-  type: "spring",
+  type: 'spring',
   stiffness: 70,
   damping: 15,
   mass: 1,
@@ -13,6 +13,7 @@ const SPRING_OPTIONS = {
 function CarouselScroll({ listImg }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
   const [imgWidth, setImgWidth] = useState(40);
   const [imgIndex, setImgIndex] = useState(Math.floor(listImg.length / 2));
 
@@ -27,8 +28,10 @@ function CarouselScroll({ listImg }) {
   };
 
   const handleOpenModal = (image) => {
-    setSelectedImage(image);
-    setIsModalOpen(true);
+    if (!isDragging) {
+      setSelectedImage(image);
+      setIsModalOpen(true);
+    }
   };
 
   useEffect(() => {
@@ -43,10 +46,10 @@ function CarouselScroll({ listImg }) {
     };
 
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
       lenis?.start();
     };
   }, [lenis]);
@@ -54,12 +57,13 @@ function CarouselScroll({ listImg }) {
   const centerOffset = (100 - imgWidth) / 2;
 
   const onDragStart = () => {
+    setIsDragging(true);
     lenis?.stop();
     dragStartX.current = dragX.get();
   };
 
   const onDragEnd = (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     lenis?.start();
     const x = dragX.get();
 
@@ -68,6 +72,7 @@ function CarouselScroll({ listImg }) {
     } else if (imgIndex > 0 && x > DRAGG_REQUIRED) {
       setImgIndex((v) => v - 1);
     }
+    setIsDragging(false);
   };
 
   return (
@@ -83,7 +88,7 @@ function CarouselScroll({ listImg }) {
         onPointerUp={() => lenis?.start()}
         onPointerCancel={() => lenis?.start()}
         style={{ x: dragX }}
-        className="flex cursor-grab active:cursor-grabbing h-full"
+        className="flex cursor-pointer active:cursor-grabbing h-full"
         animate={{
           translateX: `${centerOffset - imgIndex * imgWidth}%`,
         }}
@@ -99,7 +104,7 @@ function CarouselScroll({ listImg }) {
       </motion.div>
       {isModalOpen && (
         <Modal closeModal={handleCloseModal}>
-          <img className="rounded-2xl" src={selectedImage} loading="lazy"/>
+          <img className="rounded-2xl" src={selectedImage} loading="lazy" />
         </Modal>
       )}
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} listImg={listImg} />
@@ -123,8 +128,8 @@ function ImgContainer({ imgIndex, listImg, imgWidth, handleOpenModal }) {
           style={{
             width: `${imgWidth}%`,
             backgroundImage: `url(${v.url})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           }}
           animate={{ scale: imgIndex === i ? 1 : 0.9 }}
           transition={{ ...SPRING_OPTIONS, duration: 0.5 }}
@@ -142,7 +147,7 @@ function Dots({ imgIndex, setImgIndex, listImg }) {
           key={i}
           onClick={() => setImgIndex(i)}
           className={`h-3 w-3 rounded-full transition-colors hover:cursor-pointer ${
-            i === imgIndex ? "bg-neutral-50" : "bg-neutral-400"
+            i === imgIndex ? 'bg-neutral-50' : 'bg-neutral-400'
           }`}
         />
       ))}

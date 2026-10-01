@@ -33,7 +33,7 @@ function SlideImg({ img1, img2 }) {
           className="absolute top-0 bottom-0 z-10 w-1 bg-white pointer-events-none"
           style={{ left: `calc(${slider}% - 2px)` }}
         >
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
             <img src={arrow} alt="Icone de flecha para o slider" className="p-1" loading="lazy"/>
           </div>
         </div>

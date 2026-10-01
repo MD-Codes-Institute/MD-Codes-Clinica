@@ -1,17 +1,17 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
-import imgDr from "/metodologia.jpg";
-import NavigateButton from "../global/NavigationButton";
-import lineImg from "/line.png";
+import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import imgDr from '/metodologia.jpg';
+import NavigateButton from '../global/NavigationButton';
+import lineImg from '/line.png';
 function SectionBio() {
   const containerRef = useRef(null);
   const variants = {
     hidden: {
       opacity: 0,
-      filter: "blur(30px)",
+      filter: 'blur(30px)',
       y: 100,
     },
-    visible: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 1 } },
+    visible: { opacity: 1, filter: 'blur(0px)', y: 0, transition: { duration: 1 } },
   };
 
   return (
@@ -23,10 +23,13 @@ function SectionBio() {
         viewport={{ once: true }}
         className="flex flex-col items-center justify-center min-h-full w-full xl:w-[70%] relative z-50 md:px-10"
       >
-        <h2 className="text-xl md:text-3xl pl-2 bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent font-bold">
-          MD Codes™
+        <h2 className="text-xl md:text-[32px] font-light font-be-vietnam tracking-[8%] pl-2 text-white flex gap-4">
+          Metodologia{' '}
+          <p className="bg-linear-to-b from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent">
+            MD Codes™
+          </p>
         </h2>
-        <h3 className="font-garamond text-[45px] md:text-[85px] whitespace-nowrap text-center tracking-wider">
+        <h3 className="font-be-vietnam font-medium text-[38px] md:text-[64px] whitespace-nowrap text-center tracking-[8%]">
           CIÊNCIA E ARTE
         </h3>
         <img src={lineImg} alt="" aria-hidden="true" loading="lazy" />
@@ -41,7 +44,7 @@ function SectionBio() {
           src={imgDr}
         />
         {/* fim da imagem mobile */}
-        <p className="text-white text-center text-[16px] md:text-[20px] font-light px-5 md:px-0">
+        <p className="text-white text-center text-[16px] md:text-[20px] font-light px-5 md:px-0 tracking-[8%]">
           MD Codes™ é uma metodologia de tratamento facial criada pelo Dr. Maurício de Maio,
           referência mundial em injetáveis, que transformou a forma de avaliar, compreender e tratar
           o rosto.
@@ -59,22 +62,16 @@ function SectionBio() {
           tudo aquilo que torna o seu rosto único.
         </p>
 
-        <div className="pt-20 flex flex-row gap-10 md:gap-30 w-full md:w-[70%]">
-          <div className="flex flex-col gap-2">
-            <NavigateButton route="/sobre#clinica" buttonName="Clínica" />
-            <img src={lineImg} alt="" aria-hidden="true" loading="lazy" />
-          </div>
-          <div className="flex flex-col gap-2">
-            <NavigateButton route="/sobre#dr" buttonName="Dr. Maurício de Maio" />
-            <img src={lineImg} alt="" aria-hidden="true" loading="lazy" />
-          </div>
+        <div className="pt-20 px-10 flex flex-row items-center justify-center gap-10 md:gap-30 w-full md:w-[70%]">
+          <NavigateButton route="/sobre#clinica" buttonName="Clínica" className={"border border-[#ffcc66] w-fit px-4 py-1 rounded-md hover:scale-95 transition-all duration-150"} />
+          <NavigateButton route="/sobre#dr" buttonName="Dr. Maurício de Maio" className={"border border-[#ffcc66] w-fit px-4 py-1 rounded-md hover:scale-95 transition-all duration-150"}/>
         </div>
       </motion.div>
 
       <motion.div
         className="w-full hidden xl:w-[50%] xl:flex justify-center items-center h-full -mr-40"
         ref={containerRef}
-        style={{ perspective: "1000px" }}
+        style={{ perspective: '1000px' }}
       >
         <motion.img
           variants={variants}
