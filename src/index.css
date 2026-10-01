@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --font-montserrat: "Montserrat", serif;
-  --font-garamond: "Cormorant Garamond", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-be-vietnam: "Be Vietnam Pro", sans-serif;
   --breakpoint-laptop: 900px;
 }
 
 :root {
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--font-poppins);
   --font-gradient: linear-gradient(180deg, #d18c00, #ffe7b7);
   line-height: 1.5;
   font-weight: 400;
