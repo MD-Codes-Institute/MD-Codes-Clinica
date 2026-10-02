@@ -1,21 +1,17 @@
-import { motion } from "motion/react";
-import { aboutClinicContent, aboutContent } from "../data/content";
-import { useMemo, useState } from "react";
-import CarouselScroll from "../components/Carousel";
-import SplitText from "../../@/components/SplitText";
-import assinaturaDr from "../assets/Assinatura Dr GOLDEN.png";
-import imgDr from "../assets/about-dr-02.jpg";
-import lineImg from "/line.png";
-import recepcaoImg from "../../public/recepção.jpg";
-import Modal from "../components/Modal";
+import { motion } from 'motion/react';
+import { aboutClinicContent, aboutContent } from '../data/content';
+import { useMemo, useState } from 'react';
+import CarouselScroll from '../components/Carousel';
+import SplitText from '../../@/components/SplitText';
+import assinaturaDr from '../assets/Assinatura Dr GOLDEN.png';
+import imgDr from '../assets/about-dr-02.jpg';
+import recepcaoImg from '../../public/recepção.jpg';
+import Modal from '../components/Modal';
 
 function Sobre() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState();
-  const [
-    { title: titleDr, texts: descriptionDr },
-    { title: titleClinic, texts: descriptionClinic },
-  ] = aboutContent;
+  const [{ texts: descriptionDr }, { texts: descriptionClinic }] = aboutContent;
 
   const [clinicImgs] = useMemo(() => {
     const clinic = [];
@@ -43,43 +39,49 @@ function Sobre() {
     <section className="mt-30 flex flex-col justify-center gap-5 items-center py-10 overflow-hidden w-full bg-[#000000d3]">
       <section
         id="dr"
-        className="flex flex-col-reverse items-center justify-center lg:flex-row lg:justify-start w-[90%] h-auto"
+        className="flex flex-col items-start justify-start lg:flex-row lg:justify-start w-[90%] h-auto"
       >
-        <div className="w-[80%] flex flex-col gap-2 items-center justify-center lg:justify-start mt-10 lg:w-[50vw] relative z-10 lg:px-10 shadow-[0px_-80px_50px_#000] lg:shadow-none">
-          <motion.h1
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            className="text-md md:text-lg lg:text-xl whitespace-nowrap text-center font-bold bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent"
-          >
-            {titleDr}
-          </motion.h1>
+        <img
+          className="w-full lg:w-110 xl:w-140 2xl:w-160 brightness-85 rounded-2xl"
+          src={imgDr}
+          alt="Dr. Maurício de Maio"
+          loading="lazy"
+        />
+        <div className="w-full flex flex-col gap-5 items-start justify-center lg:justify-start lg:w-[50vw] relative z-10 lg:px-10 shadow-[0px_-80px_50px_#000] lg:shadow-none">
           <SplitText
             text="Dr. Maurício de Maio"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold whitespace-nowrap text-center"
-            textAlign="center"
-            from={{ opacity: 0, y: 10 }}
+            className="text-[1.7rem] md:text-[2rem] 2xl:text-[3rem]  w-full uppercase whitespace-nowrap text-start"
+            textAlign="start"
+            tag="h1"
+            from={{ opacity: 0, x: -10 }}
+            to={{ opacity: 1, x: 0 }}
           />
-          <span>Cirurgião plástico</span>
-          <span>Doutor em Ciências pela FMUSP</span>
-          <span>Mestre em Medicina pela FMUSP</span>
-          <div className="flex flex-row gap-3">
-            <span>CRM: 69 331 e RQE: 14 478</span>
-          </div>
-          <motion.img
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1, ease: 'easeInOut' } }}
+            className="flex flex-col gap-5 w-full"
+          >
+            <div className="flex items-start gap-5">
+              <span className="text-[14px] md:text-[16px] font-light">Cirurgião plástico</span>
+              <div className="h-6 w-0.5 rounded-2xl bg-[#ffcc66]" />
+              <span className="text-[14px] md:text-[16px] font-light">CRM: 69 331 e RQE: 14 478</span>
+            </div>
+            <div className="flex items-start gap-5">
+              <span className="text-[14px] md:text-[16px] font-light">Doutor em Ciências pela FMUSP</span>
+              <div className="h-6 w-0.5 rounded-2xl bg-[#ffcc66]" />
+              <span className="text-[14px] md:text-[16px] font-light">Mestre em Medicina pela FMUSP</span>
+            </div>
+          </motion.div>
+          <motion.div
+            className="bg-[#ffcc66] h-0.5 rounded-2xl w-full"
             initial={{ x: 150, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            src={lineImg}
-            alt=""
-            aria-hidden="true"
-            loading="lazy"
+            animate={{ x: 0, opacity: 1, transition: { duration: 1 } }}
           />
           <motion.p
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
             viewport={{ once: true }}
-            className="text-center font-normal text-md md:text-lg lg:text-xl w-full whitespace-pre-line"
+            className="text-start font-light text-md md:text-lg lg:text-xl w-full whitespace-pre-line"
           >
             {descriptionDr}
           </motion.p>
@@ -93,12 +95,6 @@ function Sobre() {
             loading="lazy"
           />
         </div>
-        <img
-          className="w-full lg:w-110 xl:w-140 2xl:w-160 brightness-85 rounded-2xl"
-          src={imgDr}
-          alt="Dr. Maurício de Maio"
-          loading="lazy"
-        />
       </section>
 
       <motion.section
@@ -106,24 +102,9 @@ function Sobre() {
         initial={{ opacity: 0, y: 150 }}
         whileInView={{ opacity: 1, y: 0, transition: { duration: 1.5 } }}
         viewport={{ once: true }}
-        className="w-full flex flex-col xl:flex-row items-start justify-center my-10 mt-30 max-w-410 px-5 xl:px-0"
+        className="w-[90%] flex flex-col xl:flex-row items-start justify-center my-0 md:my-20 mt-30 max-w-410  xl:px-0"
       >
-        <div className="flex-1 flex flex-col items-start justify-center gap-5 w-full mb-10 xl:px-10">
-          <h2 className="text-md md:text-lg lg:text-xl whitespace-nowrap text-start w-full font-medium bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent">
-            {titleClinic}
-          </h2>
-          <h3 className="text-white text-start w-full text-2xl md:text-3xl xl:text-5xl 2xl:text-6xl whitespace-nowrap">
-            Excelencia que você <br />
-            <span className="bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent">
-              vê em cada detalhe
-            </span>
-          </h3>
-          <img src="/line.png" className="w-100" alt="" aria-hidden="true" loading="lazy" />
-          <p className="text-justify w-full font-normal text-md md:text-lg lg:text-xl whitespace-pre-line">
-            {descriptionClinic}
-          </p>
-        </div>
-        <div className="flex flex-col flex-2 w-full xl:max-w-180 2xl:max-w-215">
+        <div className="flex flex-col flex-2 w-full xl:max-w-180 2xl:max-w-215 mb-10 md:mb-0">
           <button
             onClick={() => handleOpenModalImage(recepcaoImg)}
             className="w-full cursor-pointer"
@@ -142,11 +123,31 @@ function Sobre() {
           )}
           <CarouselScroll listImg={clinicImgs} />
         </div>
+        <div className="flex-1 flex flex-col items-start justify-center gap-5 w-full xl:px-10">
+          <h3 className="text-white text-start font-be-vietnam text-2xl md:text-3xl xl:text-[47px] w-full whitespace-nowrap">
+            Excelencia que você <br />
+            <span className="uppercase font-medium bg-linear-to-b tracking-wide from-[#AF761B] to-[#FFCC66] bg-clip-text text-transparent">
+              vê em cada detalhe
+            </span>
+          </h3>
+          <motion.div
+            className="bg-[#ffcc66] h-0.5 rounded-2xl w-full"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1, delay: 0.2 } }}
+            viewport={{ once: true }}
+          />
+          <p className="text-start text-[16px] xl:text-[20px]  font-light w-full whitespace-pre-line">
+            {descriptionClinic}
+          </p>
+        </div>
       </motion.section>
 
-      <div className="flex flex-wrap justify-center items-center gap-10 xl:gap-20 2xl:border 2xl:border-[#ffcc66] w-[90%] 2xl:w-full min-h-40 rounded-2xl max-w-410 py-5">
+      <div className="flex flex-wrap justify-center items-center gap-10 xl:gap-20 2xl:border 2xl:border-[#ffcc66] w-full 2xl:w-full min-h-40 rounded-2xl max-w-390 py-5">
         {aboutClinicContent.map((item) => (
-          <div key={item.id} className="max-w-80 flex flex-row items-center justify-start gap-3 h-35">
+          <div
+            key={item.id}
+            className="max-w-80 flex flex-row items-center justify-start gap-3 h-35"
+          >
             <img
               src={item.img}
               alt={item.title}

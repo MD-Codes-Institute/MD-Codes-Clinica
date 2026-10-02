@@ -18,10 +18,7 @@ function SectionCards() {
       ref={ref}
       className="w-full bg-transparent max-w-full overflow-y-hidden xl:overflow-x-hidden mt-20 flex items-center h-auto justify-center flex-col"
     >
-      <h2
-        className="text-3xl md:text-4xl mb-10 text-white text-center font-bold scale-100"
-        style={{ textShadow: "0px 2px 5px rgba(255,204,102,1)" }}
-      >
+      <h2 className="text-2xl md:text-[32px] tracking-[8%] mb-10 text-white uppercase font-be-vietnam text-center font-regular">
         Procedimentos
       </h2>
       <div
@@ -49,7 +46,7 @@ function SectionCards() {
             <h4 className="text-center text-[1em] font-semibold bg-(image:--font-gradient) bg-clip-text text-transparent">
               {v.metodo}
             </h4>
-            <h3 className="text-center md:text-xl mb-5 text-white font-light whitespace-nowrap">
+            <h3 className="text-center text-[16px] md:text-[22px] mb-5 text-white font-light whitespace-nowrap">
               {v.title}
             </h3>
             <div className="flex items-center mx-3 shadow-[0_0px_10px_2px_rgba(255,204,102,.7)] md:shadow-[0_0px_15px_2px_rgba(255,204,102,1)] rounded-2xl">
@@ -66,7 +63,7 @@ function SectionCards() {
         ))}
       </div>
       <motion.div
-        className="text-[20px] mt-10"
+        className="text-[20px] mt-5"
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.1, cursor: "pointer" }}
         whileTap={{ scale: 0.9 }}

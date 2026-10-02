@@ -52,7 +52,7 @@ function Footer() {
           </Link>
         </article>
         <Mapa />
-        <p className="text-white font-bold text-sm mt-4">
+        <p className="text-white font-medium text-center text-sm mt-4">
           ©2026 MDMaio Incorp Edu Ltda. Todos os direitos reservados.
         </p>
       </section>
