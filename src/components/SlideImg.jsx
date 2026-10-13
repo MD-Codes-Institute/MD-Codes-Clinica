@@ -18,7 +18,7 @@ function SlideImg({ img1, img2 }) {
           max="100"
           value={slider}
           onChange={handleSliderChange}
-          className="min-w-full relative h-full opacity-0 cursor-ew-resize z-50"
+          className="min-w-full! relative h-full! opacity-0 cursor-ew-resize z-50"
         />
         <div
           style={{ width: `${slider}%` }}
@@ -30,8 +30,8 @@ function SlideImg({ img1, img2 }) {
             className={`absolute md:left-0 w-90 md:w-100 h-full inset-y-0 max-w-none object-cover rounded-2xl`} loading="lazy"/>
         </div>
         <div
-          className="absolute top-0 bottom-0 z-10 w-1 bg-white pointer-events-none"
-          style={{ left: `calc(${slider}% - 2px)` }}
+          className="absolute top-0 bottom-0 z-10 w-1.5 bg-white pointer-events-none"
+          style={{ left: `calc(${slider}% - 3px)`}}
         >
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
             <img src={arrow} alt="Icone de flecha para o slider" className="p-1" loading="lazy"/>

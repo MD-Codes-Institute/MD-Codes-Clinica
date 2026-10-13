@@ -15,7 +15,7 @@ export default function NavLinks({ variant = "desktop" }) {
         <Link
           key={v.name + i}
           to={v.href}
-          className={`text-md font-semibold ${
+          className={`text-md uppercase font-semibold ${
             v.href === location.pathname
               ? "navigation-link-header-active"
               : "navigation-link-header"
